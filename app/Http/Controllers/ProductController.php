@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class ProductController extends Controller {
     public function index() {
-        $products = Product::all();
-
-        return view( 'pages.product', compact( 'products' ) );
+        return view( 'pages.product' );
     }
 
     public function detail( Product $product ) {

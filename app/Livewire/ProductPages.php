@@ -11,7 +11,10 @@ class ProductPages extends Component {
     public $products;
 
     public function mount() {
-        $this->products = Product::with( 'category' )->get();
+        $this->products = Product::with( 'category', 'media' )
+        ->orderBy( 'category_id', 'asc' )
+        ->latest()
+        ->get();
 
     }
 
