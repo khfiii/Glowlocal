@@ -14,11 +14,11 @@ const parts = url.split("/");
 
 const slug = parts.pop() || parts.pop();
 
-const loadEndpoint = `https://ebook.test/api/website/${slug}`;
-const storeEnpoint = `https://ebook.test/api/store/website/${slug}`;
+// const loadEndpoint = `https://ebook.test/api/website/${slug}`;
+// const storeEnpoint = `https://ebook.test/api/store/website/${slug}`;
 
-// const loadEndpoint = `https://glowlocal.shop/api/website/${slug}`;
-// const storeEnpoint = `https://glowlocal.shop/api/store/website/${slug}`;
+const loadEndpoint = `https://glowlocal.shop/api/website/${slug}`;
+const storeEnpoint = `https://glowlocal.shop/api/store/website/${slug}`;
 
 const escapeName = (name) =>
     `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, "-");

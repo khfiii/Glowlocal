@@ -1,7 +1,5 @@
 <x-app-layout>
-    <x-slot:title>
-        Hubungi Kami
-    </x-slot>
+    @section('page-title', 'Kebijakan Layanan')
 
     <div class="bg-white">
 

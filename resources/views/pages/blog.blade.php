@@ -1,7 +1,5 @@
 <x-app-layout>
-   <x-slot:title>
-        Baca Artikel Menarik
-    </x-slot>
+  @section('page-title', 'Baca artikel menarik')
 
 </x-app-layout>
 
