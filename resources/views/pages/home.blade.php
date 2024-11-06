@@ -3,6 +3,7 @@
     @section('page-title', 'Tempat Barang Unik, Kecantikan & Alat Rumah Tanggas')
 
 
+
     <section class="text-gray-600 body-font pt-8">
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
@@ -12,7 +13,7 @@
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
                     <a href="{{ route('product') }}"
-                        class="inline-flex bg-gray-600 text-white py-2 px-6 focus:outline-none hover:bg-transparent hover:outline hover:text-gray-600 hover:outline-1 rounded text-lg">
+                        class="inline-flex bg-gray-800 text-white py-2 px-6 focus:outline-none hover:bg-transparent hover:outline hover:text-gray-600 hover:outline-1 rounded text-lg">
                         <span class="w-full text-center">Jelajahi Produk</span>
                         </a>
                     <a href="{{ route('contact') }}"

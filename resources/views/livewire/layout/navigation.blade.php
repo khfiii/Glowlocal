@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                         {{ __('Ketentuan Layanan') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
+                        {{ __('Login') }}
+                    </x-nav-link>
                 </div>
             </div>
 
