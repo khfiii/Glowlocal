@@ -8,7 +8,7 @@
             <div class="text-start md:text-center md:max-w-3xl">
                 <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900">Katalog Barang Premium & Berkualitas Dalam Genggaman</span>
                 </h1>
-                <p class="mb-8 leading-relaxed">Cantik luar dalam? Kita yang urus! Dari skincare kece sampai perabotan estetik, plus buku-buku yang bikin tambah seru—semuanya ada di sini. Yuk, cek koleksi terbaru kita dan temukan produk premium yang bikin hidupmu makin stylish dan berkelas!
+                <p class="mb-8 leading-relaxed">Nyari barang yang berkualitas? Tenang, Kami yang urus! Dari skincare kece sampai perabotan estetik, plus buku-buku yang bikin tambah seru—semuanya ada di sini. Yuk, cek koleksi terbaru kita dan temukan produk premium yang bikin hidupmu makin stylish dan berkelas!
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
                     <a href="{{ route('product') }}"
