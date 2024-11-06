@@ -24,9 +24,11 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                         {{ __('Ketentuan Layanan') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
+                   @guest
+                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
                         {{ __('Login') }}
                     </x-nav-link>
+                   @endguest
                 </div>
             </div>
 
@@ -60,6 +62,11 @@
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                 {{ __('Ketentuan Layanan') }}
             </x-responsive-nav-link>
+          @guest
+              <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
+                {{ __('Login') }}
+            </x-responsive-nav-link>
+          @endguest
         </div>
     </div>
 </nav>
