@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "@preline/combobox": "^2.5.0",
+        "@splidejs/splide": "^4.1.4",
         "alpinejs": "^3.14.1",
         "grapesjs": "^0.22.1",
         "grapesjs-blocks-basic": "^1.0.2",

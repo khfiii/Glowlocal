@@ -54,6 +54,9 @@ class ProductResource extends Resource {
             ->hidden( fn( Get $get )=> $get( 'is_affiliate' ) ),
             SpatieMediaLibraryFileUpload::make( 'image' )
             ->collection( 'product_images' )
+            ->preserveFilenames()
+            ->storeFileNamesIn( 'product_originals' )
+            ->multiple()
             ->image()
             ->required()
         ] );

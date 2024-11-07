@@ -45,11 +45,36 @@
     <div class="font-sans">
         <div class="p-4 lg:max-w-7xl max-w-xl max-lg:mx-auto">
             <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
-                <div
-                    class="min-h-[250px] md:min-h-[500px] flex items-center lg:col-span-3 bg-[#eeeeee] rounded-lg w-full lg:sticky top-0 text-center p-6">
-                    <img src="{{ $product->getFirstMediaUrl('product_images') }}" alt="Product"
-                        class="w-3/5 rounded object-cover mx-auto py-6" />
+                <div x-cloack
+                    class="min-h-[250px] md:min-h-[500px] lg:col-span-3 bg-gray-50 rounded-lg w-full lg:sticky top-0 text-center">
+
+                    <div id="main-carousel" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach ($product->getMedia('*') as $media)
+                                    <li class="splide__slide"><img src="{{ $media->getUrl() }}"
+                                            alt="{{ $product->title }}"></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    <section id="thumbnail-carousel" class="splide mt-4"
+                        aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach ($product->getMedia('*') as $media)
+                                    <li class="splide__slide">
+                                        <img src="{{ $media->getUrl() }}" alt="{{ $product->title }}">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </section>
+
+
                 </div>
+
 
                 <div class="lg:col-span-2">
                     <h2 class="text-2xl font-bold text-gray-800">{{ $product->title }}</h2>

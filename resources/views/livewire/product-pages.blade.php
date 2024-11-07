@@ -10,8 +10,8 @@
                     <div class="relative h-[20rem]">
                         <a href="{{ route('product.detail', ['product' => $product]) }}">
                             <div class="w-full h-full space-y-4 hover:scale-[105%] transition-transform">
-                                <div class="h-[70%] w-full flex flex-col justify-center bg-[#eeeeee] items-center">
-                                    <div class="w-[8rem]">
+                                <div class="h-[70%] w-full flex flex-col justify-center items-center">
+                                    <div class="w-full">
                                         <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                             alt="{{ $product->title }}">
                                     </div>
