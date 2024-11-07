@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <section id="thumbnail-carousel" class="splide mt-4"
+                    <section id="thumbnail-carousel" class="splide mt-1"
                         aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
                         <div class="splide__track">
                             <ul class="splide__list">

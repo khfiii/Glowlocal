@@ -7,10 +7,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
                 @foreach ($products as $product)
-                    <div class="relative h-[20rem]">
+                    <div class="full">
                         <a href="{{ route('product.detail', ['product' => $product]) }}">
-                            <div class="w-full h-full space-y-4 hover:scale-[105%] transition-transform">
-                                <div class="h-[70%] w-full flex flex-col justify-center items-center">
+                            <div class="w-full h-full hover:scale-[105%] transition-transform -space-y-2">
+                                <div class="h-full w-full flex flex-col items-start">
                                     <div class="w-full">
                                         <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                             alt="{{ $product->title }}">
