@@ -9,8 +9,8 @@
                 @foreach ($products as $product)
                     <div class="full">
                         <a href="{{ route('product.detail', ['product' => $product]) }}">
-                            <div class="w-full h-full hover:scale-[105%] transition-transform md:-space-y-2">
-                                <div class="h-full w-full flex flex-col items-start">
+                            <div class="w-full h-full hover:scale-[105%] transition-transform">
+                                <div class="h-full w-full flex flex-col items-end justify-center">
                                     <div class="w-full">
                                         <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                             alt="{{ $product->title }}">
