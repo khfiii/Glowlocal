@@ -16,7 +16,7 @@
                 <div class="mr-20 text-gray-600 lg:col-span-5 w-full md:max-w-2xl p-4 border">
                     <h1 class="mb-1 text-xl font-bold">Keamanan dan Privasi</h1>
                     <p class="">
-                        Glowlocal berkomitmen untuk menjaga privasi dan keamanan data pribadi Anda. Seluruh transaksi dilakukan melalui sistem keamanan Midtrans. Pengguna bertanggung jawab untuk menjaga kerahasiaan data login dan informasi pembayaran mereka.
+                        Glowlocal berkomitmen untuk menjaga privasi dan keamanan data pribadi Anda. Seluruh transaksi dilakukan melalui sistem keamanan tinggi. Pengguna bertanggung jawab untuk menjaga kerahasiaan data login dan informasi pembayaran mereka.
                     </p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                         Jika memiliki pertanyaan atau memerlukan bantuan terkait dengan transaksi pembayaran,
                         silakan hubungi layanan pelanggan Glowlocal melalui: <br> <br>
 
-                        Email: support@glowlocal.com <br>
+                        Email: glowlocal.bussiness@gmail.com <br>
                         Telepon: +62 838 709 78537
                     </p>
                 </div>

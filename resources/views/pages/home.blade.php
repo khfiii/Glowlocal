@@ -7,9 +7,10 @@
     <section class="text-gray-600 body-font pt-8">
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900">Katalog Barang Premium & Mewah Dalam Genggaman</span>
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900">Katalog Barang Premium: Harga Terjangkau, Kualitas Maksimal!</span>
                 </h1>
-                <p class="mb-8 leading-relaxed">Nyari barang Premium? Tenang, Kami yang urus! Dari skincare sampai perabotan rumah tangga dan outfit kece, plus buku-buku yang bikin tambah seru—semuanya ada di sini. Yuk, cek koleksi terbaru kita dan temukan produk premium yang bikin hidupmu makin stylish dan berkelas!
+                <p class="mb-8 leading-relaxed">
+                Temukan pilihan barang premium berkualitas tinggi dengan harga terjangkau. Kami hadir untuk memenuhi kebutuhan Anda akan produk terbaik!
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
                     <a href="{{ route('product') }}"
