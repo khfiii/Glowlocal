@@ -10,9 +10,16 @@ class ProductDetail extends Component {
     public Product $product;
 
     public function addToChart( Product $product ) {
+
         if ( !Auth::check() ) {
             return redirect()->route( 'login' );
         }
+
+        if ( !Auth::user()->hasVerifiedEmail() ) {
+            return redirect()->route( 'verification.notice' );
+        }
+
+        dd( 'hai manis' );
 
     }
 
