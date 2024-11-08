@@ -11,9 +11,9 @@ class ProductDetail extends Component {
 
     public function addToChart( Product $product ) {
         if ( !Auth::check() ) {
-            // Jika belum login, arahkan ke halaman login
             return redirect()->route( 'login' );
         }
+
     }
 
     public function render() {

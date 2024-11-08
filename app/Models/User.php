@@ -3,10 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Panel;
+use App\Models\Cart;
 use Illuminate\Notifications\Notifiable;
 use Devdojo\Auth\Models\User as AuthUser;
 use Filament\Models\Contracts\FilamentUser;
-use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -50,4 +51,9 @@ class User extends AuthUser implements FilamentUser {
         return true;
 
     }
+
+    public function cart() {
+        return $this->hasOne( Cart::class );
+    }
+
 }
