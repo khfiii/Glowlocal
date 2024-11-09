@@ -15,10 +15,6 @@ class ProductDetail extends Component {
             return redirect()->route( 'login' );
         }
 
-        if ( !Auth::user()->hasVerifiedEmail() ) {
-            return redirect()->route( 'verification.notice' );
-        }
-
         dd( 'hai manis' );
 
     }

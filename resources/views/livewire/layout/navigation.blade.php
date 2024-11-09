@@ -25,7 +25,7 @@
                         {{ __('Ketentuan Layanan') }}
                     </x-nav-link>
 
-                    @if(auth()->check() && auth()->user()->hasVerifiedEmail())       
+                    @if(auth()->check())       
                       <x-nav-link :href="route('logout.get')" :active="request()->routeIs('login')" wire:navigate>
                             {{ __('Logout') }}
                         </x-nav-link>
