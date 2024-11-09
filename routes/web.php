@@ -16,7 +16,7 @@ Route::view( '/ketentuan-layanan', 'pages.contact' )->name( 'contact' );
 Route::get( '/blog', [ BlogController::class, 'index' ] )->name( 'blog' );
 Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail.blog' );
 Route::view( '/cart', 'pages.cart' )
-->middleware( [ 'auth', 'verified' ] )
+->middleware( [ 'auth' ] )
 ->name( 'cart' );
 
 Route::get( '/pages/visit/{slug}', [ WebsiteController::class, 'visit' ] )->name( 'page.visit' );

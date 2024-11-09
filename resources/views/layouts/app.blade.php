@@ -29,6 +29,8 @@
             display: none !important;
         }
     </style>
+
+      <x-toaster-hub /> <!-- 👈 -->
 </head>
 
 

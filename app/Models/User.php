@@ -50,6 +50,17 @@ class User extends AuthUser implements FilamentUser, ShouldQueue {
         ];
     }
 
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            // Buat keranjang aktif untuk user baru
+            Cart::create([
+                'user_id' => $user->id,
+                'is_active' => true,
+            ]);
+        });
+    }
+
     public function canAccessPanel( Panel $panel ): bool {
         return true;
 
