@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    @section('page-title', 'Tempat Barang Unik, Kecantikan & Alat Rumah Tanggas')
+    @section('page-title', 'Tempat Barang Unik, Kecantikan & Alat Rumah Tangga')
 
 
 
