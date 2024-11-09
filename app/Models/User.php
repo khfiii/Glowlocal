@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Filament\Panel;
 use App\Models\Cart;
+use App\Mails\QueuedVerifyEmail;
+use App\Notifications\CustomVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Devdojo\Auth\Models\User as AuthUser;
 use Filament\Models\Contracts\FilamentUser;
@@ -55,6 +57,10 @@ class User extends AuthUser implements FilamentUser, ShouldQueue {
 
     public function cart() {
         return $this->hasOne( Cart::class );
+    }
+
+    public function sendEmailVerificationNotification() {
+        $this->notify( new QueuedVerifyEmail() );
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
