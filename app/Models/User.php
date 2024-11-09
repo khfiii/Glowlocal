@@ -59,8 +59,4 @@ class User extends AuthUser implements FilamentUser, ShouldQueue {
         return $this->hasOne( Cart::class );
     }
 
-    public function sendEmailVerificationNotification() {
-        $this->notify( new QueuedVerifyEmail() );
-    }
-
 }
