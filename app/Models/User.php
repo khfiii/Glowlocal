@@ -8,10 +8,11 @@ use App\Models\Cart;
 use Illuminate\Notifications\Notifiable;
 use Devdojo\Auth\Models\User as AuthUser;
 use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends AuthUser implements FilamentUser {
+class User extends AuthUser implements FilamentUser, ShouldQueue {
     use HasFactory, Notifiable;
 
     /**
