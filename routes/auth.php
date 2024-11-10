@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Auth\VerifyEmailController;
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
 use Livewire\Volt\Volt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\VerifyEmailController;
 
 Route::middleware('guest')->group(function () {
     Volt::route('register', 'pages.auth.register')
@@ -40,3 +42,24 @@ Route::get('auth/logout', function(Request $request){
 
     return redirect('/'); // Redirect ke halaman utama setelah logout
 })->name('logout.get'); 
+
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+})->name('google-login');
+
+Route::get('/auth/google/callback', function () {
+    $userGoogle = Socialite::driver('google')->user();
+
+    $user = User::updateOrCreate(
+        ['email' => $userGoogle->getEmail()],  // Kondisi pencarian berdasarkan email
+        [
+            'name' => $userGoogle->getName(),
+            'email_verified_at' => Carbon::now(),   // Tandai sebagai email terverifikasi
+        ]
+    );
+
+    Auth::login($user);
+    
+    return redirect('/');
+});

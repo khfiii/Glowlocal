@@ -25,8 +25,8 @@
         </div>
 
         <a href="{{ route('google-login') }}"
-            class="px-4 py-2 border text-sm flex justify-center gap-2 rounded w-[85%] md:w-[32%]">
-            <img class="w-5 h-5" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy"
+            class="px-4 py-2 border text-sm flex justify-center gap-2 rounded w-[85%] md:w-[30%]">
+            <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy"
                 alt="google logo">
             <span>Lanjutkan Dengan Google</span>
         </a>
