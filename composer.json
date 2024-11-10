@@ -23,8 +23,7 @@
         "mohamedsabil83/filament-forms-tinyeditor": "^2.3",
         "openai-php/laravel": "^0.10.2",
         "spatie/laravel-medialibrary": "^11.9",
-        "spatie/laravel-sitemap": "^7.2",
-        "xendit/xendit-php": "6.0.0"
+        "spatie/laravel-sitemap": "^7.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
