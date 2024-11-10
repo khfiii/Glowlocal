@@ -2,7 +2,9 @@
 
 use App\Models\Website;
 use App\Models\ProductType;
+use Illuminate\Http\Request;
 use App\Models\WebsiteDetail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use Laravel\Socialite\Facades\Socialite;
@@ -22,7 +24,7 @@ Route::view( '/cart', 'pages.cart' )
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('google')->redirect();
-});
+})->name('google-login');
 
 Route::get( '/pages/visit/{slug}', [ WebsiteController::class, 'visit' ] )->name( 'page.visit' );
 Route::get( '/pages/manage/{website:slug}', [ WebsiteController::class, 'manage' ] )->name( 'page.manage' );

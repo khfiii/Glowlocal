@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Filament\Panel;
 use App\Models\Cart;
 use App\Mails\QueuedVerifyEmail;
-use App\Notifications\CustomVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Devdojo\Auth\Models\User as AuthUser;
 use Filament\Models\Contracts\FilamentUser;
@@ -14,7 +13,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends AuthUser implements FilamentUser, ShouldQueue {
+class User extends Authenticatable implements  MustVerifyEmail, FilamentUser, ShouldQueue {
     use HasFactory, Notifiable;
 
     /**
