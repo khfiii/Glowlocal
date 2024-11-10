@@ -25,13 +25,13 @@
         </div>
 
         <a href="{{ route('google-login') }}"
-            class="px-4 py-2 border text-sm flex justify-center gap-2 rounded">
+            class="px-4 py-2 border text-sm flex justify-center gap-2 rounded w-[85%] md:w-[32%]">
             <img class="w-5 h-5" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy"
                 alt="google logo">
             <span>Lanjutkan Dengan Google</span>
         </a>
 
-        <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mt-2">
             {{ $slot }}
         </div>
     </div>
