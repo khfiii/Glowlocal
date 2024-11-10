@@ -73,7 +73,7 @@ new #[Layout('layouts.guest')] class extends Component {
             </label>
 
             <div class="flex items-center justify-end mt-4">
-                <a href="#" class="text-sm text-gray-600 text-center">Don't have an account? Register </a>
+                <a href="{{ route('register') }}" class="text-sm text-gray-600 text-center">Don't have an account? Register </a>
 
                
 
