@@ -35,7 +35,7 @@
 
                     @guest
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
-                            {{ __('Login') }}
+                            {{ __('Masuk') }}
                         </x-nav-link>
                     @endguest
 
@@ -83,7 +83,7 @@
             </x-responsive-nav-link>
             @guest
                 <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
-                    {{ __('Login') }}
+                    {{ __('Masuk') }}
                 </x-responsive-nav-link>
             @endguest
 
