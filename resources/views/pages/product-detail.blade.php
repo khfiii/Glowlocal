@@ -6,9 +6,6 @@
             <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
                 <div x-cloack
                     class="min-h-[250px] md:min-h-[500px] lg:col-span-3 bg-gray-50 rounded-lg w-full lg:sticky top-0 text-center">
-
-                        @dump(( config('services.google.client_id') ))
-                        @dump(( config('services.google.client_secret') ))
                     
                     <div id="main-carousel" class="splide">
                         <div class="splide__track">
