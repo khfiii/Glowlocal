@@ -31,7 +31,7 @@
             <span>Lanjutkan Dengan Google</span>
         </a>
 
-        <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mt-2">
+        <div class="w-full sm:max-w-md px-6 py-4 bg-white overflow-hidden sm:rounded-lg mt-2">
             {{ $slot }}
         </div>
     </div>
