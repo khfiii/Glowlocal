@@ -5,6 +5,7 @@ use App\Models\ProductType;
 use App\Models\WebsiteDetail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 
@@ -18,6 +19,10 @@ Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail
 Route::view( '/cart', 'pages.cart' )
 ->middleware( [ 'auth' ] )
 ->name( 'cart' );
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
 
 Route::get( '/pages/visit/{slug}', [ WebsiteController::class, 'visit' ] )->name( 'page.visit' );
 Route::get( '/pages/manage/{website:slug}', [ WebsiteController::class, 'manage' ] )->name( 'page.manage' );
