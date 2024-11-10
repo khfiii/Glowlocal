@@ -40,6 +40,16 @@ new #[Layout('layouts.guest')] class extends Component
 
 <div>
 
+    <div class="w-full mb-4">
+
+    <a href="{{ route('google-login') }}"
+        class="px-4 py-2 border text-sm flex justify-center gap-2 rounded w-full">
+        <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy" alt="google logo">
+        <span>Continue with Google</span>
+    </a>
+   
+   </div>
+
     
 
     <form wire:submit="register">
