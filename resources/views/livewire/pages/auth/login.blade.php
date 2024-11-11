@@ -96,8 +96,6 @@ new #[Layout('layouts.guest')] class extends Component {
                             </svg>
                             <span class="sr-only">Loading...</span>
                         </div>
-
-
                     </x-primary-button>
                 </div>
             </div>
