@@ -23,6 +23,7 @@ Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail
 Route::view( '/cart', 'pages.cart' )
 ->middleware( [ 'auth' ] )
 ->name( 'cart' );
+
 Route::get( '/pages/visit/{slug}', [ WebsiteController::class, 'visit' ] )->name( 'page.visit' );
 Route::get( '/pages/manage/{website:slug}', [ WebsiteController::class, 'manage' ] )->name( 'page.manage' );
 

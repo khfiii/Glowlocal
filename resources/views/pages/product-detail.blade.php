@@ -11,8 +11,9 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 @foreach ($product->getMedia('*') as $media)
-                                    <li class="splide__slide"><img src="{{ $media->getUrl() }}"
-                                            alt="{{ $product->title }}"></li>
+                                    <li class="splide__slide">
+                                    <img src="{{ $media->getUrl() }}"
+                                            alt="{{ $product->title }}" loading="lazy"></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -24,7 +25,7 @@
                             <ul class="splide__list">
                                 @foreach ($product->getMedia('*') as $media)
                                     <li class="splide__slide">
-                                        <img src="{{ $media->getUrl() }}" alt="{{ $product->title }}">
+                                        <img src="{{ $media->getUrl() }}" loading="lazy" alt="{{ $product->title }}">
                                     </li>
                                 @endforeach
                             </ul>

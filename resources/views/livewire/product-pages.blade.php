@@ -12,7 +12,7 @@
                             <div class="h-full w-full flex flex-col items-start gap-4 justify-center relative">
                                 <div class="w-full">
                                     <img src="{{ $product->getFirstMediaUrl('product_images') }}"
-                                        alt="{{ $product->title }}">
+                                        alt="{{ $product->title }}" loading="lazy">
                                 </div>
                                 <div class="space-y-4 block">
                                     <h1 class="text-sm font-bold text-gray-800">{{ $product->title }}</h1>
