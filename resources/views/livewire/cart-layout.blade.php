@@ -18,7 +18,7 @@
         </div>
     @else
         <div class="font-sans max-w-5xl max-md:max-w-xl mx-auto bg-white py-4">
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
+            <div class="grid md:grid-cols-3 gap-8 mt-4">
                 <div class="md:col-span-2 space-y-4">
                     @foreach ($cartItems as $item)
                         <div class="grid grid-cols-3 items-start gap-4">
@@ -31,9 +31,9 @@
                                 <div class="flex flex-col">
                                     <h3 class="text-base font-bold text-gray-800">{{ $item->product->title }}</h3>
 
-                                    <p class="text-xs font-semibold text-gray-500 mt-0.5">
+                                    {{-- <p class="text-xs font-semibold text-gray-500 mt-0.5">
                                     {{ $item->product->category->name }}
-                                    </p>
+                                    </p> --}}
 
 
                                     <button type="button" wire:click="removeItem({{ $item }})"
