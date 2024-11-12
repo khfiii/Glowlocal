@@ -1,6 +1,6 @@
 <div>
     @section('page-title', 'Keranjang Belanja')
-    @if (count($cartItems) < 0)
+    @if ($cartItems->isEmpty())
         <div class="max-w-4xl mx-auto px-10 py-4 bg-white rounded-lg shadow-lg">
             <div class="flex flex-col items-center justify-center py-12">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
