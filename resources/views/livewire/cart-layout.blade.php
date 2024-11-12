@@ -31,9 +31,9 @@
                                 <div class="flex flex-col">
                                     <h3 class="text-base font-bold text-gray-800">{{ $item->product->title }}</h3>
 
-                                    {{-- <p class="text-xs font-semibold text-gray-500 mt-0.5">
-                                    {{ $item->product->category->name }}
-                                    </p> --}}
+                                    <p class="text-xs font-semibold text-gray-500 mt-0.5">
+                                    Limited
+                                    </p> 
 
 
                                     <button type="button" wire:click="removeItem({{ $item }})"
@@ -91,6 +91,8 @@
 
                                 <span class="mx-3 font-bold"> {{ $item->quantity }}</span>
 
+                              
+
                                 <button wire:click="increase({{ $item }})" class="text-gray-800 font-bold">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 fill-current"
                                         viewBox="0 0 42 42">
@@ -101,11 +103,7 @@
                                 </button>
                             </div>
                         </div>
-
-                        <hr>
                     @endforeach
-
-
                 </div>
 
                 <div class="bg-gray-100 rounded-md p-4 h-max">
@@ -153,14 +151,17 @@
                     </form>
 
                     <ul class="text-gray-800 mt-6 space-y-3">
-                        <li class="flex flex-wrap gap-4 text-sm">Subtotal <span class="ml-auto font-bold">{{ formatRupiah($subtotal) }}</span>
+                        <li class="flex flex-wrap gap-4 text-sm">Subtotal <span
+                                class="ml-auto font-bold">{{ formatRupiah($subtotal) }}</span>
                         </li>
-                        <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan <span class="ml-auto font-bold">{{ formatRupiah($layanan) }}</span>
+                        <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan <span
+                                class="ml-auto font-bold">{{ formatRupiah($layanan) }}</span>
                         </li>
                         {{-- <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan 2% <span class="ml-auto font-bold"
                                 x-text="biayaLayanan"></span></li> --}}
                         <hr class="border-gray-300" />
-                        <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span class="ml-auto">{{ formatRupiah($total ) }}</span>
+                        <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span
+                                class="ml-auto">{{ formatRupiah($total) }}</span>
                         </li>
                     </ul>
 
