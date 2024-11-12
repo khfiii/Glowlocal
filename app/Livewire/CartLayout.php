@@ -25,20 +25,11 @@ class CartLayout extends Component {
     public function render() {
 
 
-        $this->cartItems = auth()->check() && auth()->user()->cart
-        ? auth()->user()->cart->load( 'items.product.media' )->items
-        : collect();
-
-        $this->subtotal = $this->cartItems->sum(function($item){
-            return $item->product->price * $item->quantity; 
-        });
-
-        $this->total = $this->subtotal + $this->layanan; 
-
         $this->name = auth()->user()->name; 
         $this->email = auth()->user()->email; 
 
         // Kembalikan collection kosong jika cart atau user tidak ada
+        $this->loadItems();
 
         return view( 'livewire.cart-layout' );
     }
@@ -56,5 +47,27 @@ class CartLayout extends Component {
             $item->quantity--;
             $item->save();
         }
+    }
+
+    public function updateQuantity($itemId, $quantity)
+    {
+        $item = CartItem::find($itemId);
+
+        if ($item) {
+            $item->quantity = $quantity;
+            $item->save();
+        }
+    }
+
+    public function loadItems(){
+        $this->cartItems = auth()->check() && auth()->user()->cart
+        ? auth()->user()->cart->load( 'items.product.media' )->items
+        : collect();
+
+        $this->subtotal = $this->cartItems->sum(function($item){
+            return $item->product->price * $item->quantity; 
+        });
+
+        $this->total = $this->subtotal + $this->layanan; 
     }
 }
