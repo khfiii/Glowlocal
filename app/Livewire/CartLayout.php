@@ -19,7 +19,9 @@ class CartLayout extends Component {
         $item->delete();
         $this->dispatch( 'add-chart' );
         $this->dispatch( 'refresh' );
+        $this->loadItems(); 
         Toaster::success( 'Item di hapus dari keranjang' );
+
     }
 
     public function render() {
