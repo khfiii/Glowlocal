@@ -33,6 +33,8 @@ class ProductResource extends Resource {
         ->schema( [
             TextInput::make( 'title' )
             ->required(),
+            TextInput::make( 'rating' )
+            ->required(),
             Checkbox::make( 'is_affiliate' )
             ->label( 'Affiliate' )
             ->inline()

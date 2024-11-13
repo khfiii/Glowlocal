@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title'); 
             $table->string('slug');
+            $table->string('rating')->nullable(); 
             $table->longText('description')->nullable(); 
             $table->foreignIdFor(Category::class)->constrained()->onDelete('cascade'); 
             $table->boolean('is_affiliate')->default(false);
