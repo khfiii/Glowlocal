@@ -10,7 +10,7 @@
                 <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900">Katalog Barang Premium: Harga Terjangkau, Kualitas Maksimal!</span>
                 </h1>
                 <p class="mb-8 leading-relaxed">
-                Temukan pilihan barang fisik maupun digital berkualitas tinggi dengan harga terjangkau. Kami hadir untuk memenuhi kebutuhanmu akan produk dan pengetahuan terbaik!
+                Temukan pilihan barang fisik maupun digital berkualitas tinggi dengan harga terjangkau. Kami hadir untuk memenuhi kebutuhanmu akan produk terbaik!
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
                     <a href="{{ route('product') }}"
