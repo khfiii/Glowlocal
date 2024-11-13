@@ -8,13 +8,22 @@ use Masmerise\Toaster\Toaster;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ProductDetail extends Component {
     public Product $product;
 
+    public $defaultUrl;
+
+    public function mount() {
+        $this->defaultUrl = url()->current() ?? route( 'home' );
+
+    }
+
     public function addToChart( Product $product ) {
 
         if ( !Auth::check() ) {
+            Session::put( 'url.intended', $this->defaultUrl );
             return redirect()->route( 'login' );
         }
 
