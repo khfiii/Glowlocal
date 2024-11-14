@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->decimal('total_price', 10, 2); // total harga pesanan
+            $table->string('noted')->nullable(); // total harga pesanan
             $table->string('status')->default('pending'); // status pesanan, misal: pending, completed, canceled
             $table->timestamps();
         });

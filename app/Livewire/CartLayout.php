@@ -9,10 +9,12 @@ use Masmerise\Toaster\Toaster;
 class CartLayout extends Component {
 
     public $subtotal = 0;
-    public $layanan = 2000;
+    public $layanan = 0;
     public $total; 
+    public $user; 
     public $email; 
     public $name; 
+    public $noted; 
     public $cartItems;
 
     public function removeItem( CartItem $item ) {
@@ -26,7 +28,7 @@ class CartLayout extends Component {
 
     public function render() {
 
-
+        $this->user = auth()->user();
         $this->name = auth()->user()->name; 
         $this->email = auth()->user()->email; 
 
@@ -71,5 +73,21 @@ class CartLayout extends Component {
         });
 
         $this->total = $this->subtotal + $this->layanan; 
+    }
+
+    public function checkout(){
+       $validated =  $this->validate([
+            'email' => 'required', 
+            'name' => 'required', 
+        ]); 
+
+        $data = [
+            'user_id' => $this->user->id, 
+            'total_price' => $this->total , 
+            'noted' => $this->noted, 
+
+        ]; 
+
+        dd($data); 
     }
 }

@@ -88,7 +88,7 @@
                     <h3 class="text-lg max-sm:text-base font-bold text-gray-800 border-b border-gray-300 pb-2">Ringkasan
                         Order</h3>
 
-                    <form class="mt-6">
+                    <form class="mt-6" wire:submit="checkout">
                         <div>
                             <h3 class="text-base text-gray-800  font-semibold mb-4">Detail Info</h3>
                             <div class="space-y-3">
@@ -104,52 +104,52 @@
                                     </svg>
                                 </div>
 
+                                @error('name')
+                                    <small class="text-red-600 text-xs">{{ $message }}</small>
+                                @enderror
+
                                 <div class="relative flex items-center">
                                     <input type="email" wire:model="email" placeholder="Email"
                                         class="px-4 py-2.5 bg-white text-gray-800 rounded-md w-full text-sm border-b focus:border-gray-800 outline-none" />
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
-                                        class="w-4 h-4 absolute right-4" viewBox="0 0 682.667 682.667">
-                                        <defs>
-                                            <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                                                <path d="M0 512h512V0H0Z" data-original="#000000"></path>
-                                            </clipPath>
-                                        </defs>
-                                        <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
-                                            <path fill="none" stroke-miterlimit="10" stroke-width="40"
-                                                d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
-                                                data-original="#000000"></path>
-                                            <path
-                                                d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
-                                                data-original="#000000"></path>
-                                        </g>
-                                    </svg>
+                                    <x-hugeicons-mail-minus-01 class="absolute right-0 w-5 h-5 m-4 text-gray-400" />
+                                </div>
+
+                                @error('email')
+                                    <small class="text-red-600 text-xs">{{ $message }}</small>
+                                @enderror
+
+                                <div class="relative flex items-center">
+                                    <input type="text" wire:model="noted" placeholder="Catatan Tambahan"
+                                        class="px-4 py-2.5 bg-white text-gray-800 rounded-md w-full text-sm border-b focus:border-gray-800 outline-none" />
+                                    <x-hugeicons-edit-02 class="absolute right-0 w-5 h-5 m-4 text-gray-400" />
                                 </div>
                             </div>
                         </div>
-                    </form>
 
-                    <ul class="text-gray-800 mt-6 space-y-3">
-                        <li class="flex flex-wrap gap-4 text-sm">Subtotal <span
-                                class="ml-auto font-bold">{{ formatRupiah($subtotal) }}</span>
-                        </li>
-                        <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan <span
-                                class="ml-auto font-bold">{{ formatRupiah($layanan) }}</span>
-                        </li>
-                        {{-- <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan 2% <span class="ml-auto font-bold"
+                        <ul class="text-gray-800 mt-6 space-y-3">
+                            <li class="flex flex-wrap gap-4 text-sm">Subtotal <span
+                                    class="ml-auto font-bold">{{ formatRupiah($subtotal) }}</span>
+                            </li>
+                            <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan <span
+                                    class="ml-auto font-bold">{{ formatRupiah($layanan) }}</span>
+                            </li>
+                            {{-- <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan 2% <span class="ml-auto font-bold"
                                 x-text="biayaLayanan"></span></li> --}}
-                        <hr class="border-gray-300" />
-                        <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span
-                                class="ml-auto">{{ formatRupiah($total) }}</span>
-                        </li>
-                    </ul>
+                            <hr class="border-gray-300" />
+                            <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span
+                                    class="ml-auto">{{ formatRupiah($total) }}</span>
+                            </li>
+                        </ul>
 
-                    <div class="mt-6 space-y-3">
-                        <button type="button"
-                            class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-gray-800 hover:bg-gray-900 text-white rounded-md">Checkout</button>
-                        <button type="button"
-                            class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-transparent text-gray-800 border border-gray-300 rounded-md">Continue
-                            Shopping </button>
-                    </div>
+                        <div class="mt-6 space-y-3">
+                            <button type="submit" wire:loading.attr="disabled"
+                                class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-gray-800 hover:bg-gray-900 text-white rounded-md">Checkout</button>
+
+                            <a href="{{ route('product') }}"
+                                class="block text-center text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-transparent text-gray-800 border border-gray-300 rounded-md">Continue
+                                Shopping </a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
