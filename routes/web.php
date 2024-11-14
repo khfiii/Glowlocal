@@ -18,7 +18,7 @@ use App\Http\Controllers\WebsiteController;
 Route::get( '/', [ HomeController::class, 'index' ] )->name( 'home' );
 Route::get( 'product', [ ProductController::class, 'index' ] )->name( 'product' );
 Route::get( 'product/{product:slug}', [ ProductController::class, 'detail' ] )->name( 'product.detail' );
-Route::view( '/ketentuan-layanan', 'pages.contact' )->name( 'contact' );
+Route::view( '/tentang', 'pages.contact' )->name( 'contact' );
 Route::get( '/blog', [ BlogController::class, 'index' ] )->name( 'blog' );
 Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail.blog' );
 Route::get( '/cart', [ CartController::class, 'index' ] )
