@@ -16,7 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 
 Route::get( '/', [ HomeController::class, 'index' ] )->name( 'home' );
-Route::get( 'product', [ ProductController::class, 'index' ] )->name( 'product' );
+Route::get( 'produk', [ ProductController::class, 'index' ] )->name( 'product' );
 Route::get( 'product/{product:slug}', [ ProductController::class, 'detail' ] )->name( 'product.detail' );
 Route::view( '/tentang', 'pages.contact' )->name( 'contact' );
 Route::get( '/artikel', [ BlogController::class, 'index' ] )->name( 'artikel' );
