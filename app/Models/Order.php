@@ -5,8 +5,10 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\OrderItem;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Order extends Model {
+    use HasUuids;
 
     const STATUS_PENDING = 'pending';
     const STATUS_COMPLETED = 'completed';

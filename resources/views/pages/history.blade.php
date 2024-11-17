@@ -19,7 +19,7 @@
                                 <div class="flex justify-between items-start mb-4">
                                     <div>
                                         <p class="text-sm text-gray-600">Order
-                                            #{{ $order->id + $order->created_at->format('dmy') }}</p>
+                                            #{{ Str::before($order->id, '-')}}</p>
                                         <p class="text-sm text-gray-600">{{ $order->created_at->format('d F Y') }}</p>
                                     </div>
 

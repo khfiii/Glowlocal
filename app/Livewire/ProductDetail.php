@@ -47,8 +47,6 @@ class ProductDetail extends Component {
             Toaster::success( 'Berhasil memasukan ke keranjang' );
 
         } catch ( \Throwable $th ) {
-            dd( $th );
-
             Toaster::warning( 'Terjadi Kesalahan Coba Lagi Beberapa Saat' );
             DB::rollback();
             Log::info( $th );

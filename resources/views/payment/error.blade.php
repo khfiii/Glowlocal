@@ -1,3 +1,0 @@
-<div>
-    Pembayaran Bermasalah
-</div>

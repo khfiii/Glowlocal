@@ -12,6 +12,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\ShoppingController;
@@ -23,16 +24,11 @@ Route::view( '/tentang', 'pages.contact' )->name( 'contact' );
 Route::get( '/artikel', [ BlogController::class, 'index' ] )->name( 'artikel' );
 Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail.blog' );
 
-Route::get('shopping-history', [ShoppingController::class, 'index'])
-->name('shopping-history');
+Route::get( 'shopping-history', [ ShoppingController::class, 'index' ] )
+->name( 'shopping-history' );
 
-Route::get('orders/success', function(){
-    return view('payment.finish');
-});
-
-Route::get('orders/errors', function(){
-    return view('payment.error');
-});
+Route::get( 'orders/status/', [ PaymentController::class, 'index' ] )
+->middleware( [ 'auth', 'payment' ] );
 
 Route::get( '/cart', [ CartController::class, 'index' ] )
 ->middleware( [ 'auth' ] )

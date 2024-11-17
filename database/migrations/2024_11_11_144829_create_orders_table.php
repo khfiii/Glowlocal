@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->decimal('total_price', 10, 2); // total harga pesanan
             $table->string('noted')->nullable(); // total harga pesanan

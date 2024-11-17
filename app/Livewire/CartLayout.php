@@ -70,27 +70,53 @@ class CartLayout extends Component {
             'email' => 'required', 
             'name' => 'required', 
         ]); 
-
-        $order = [   
+        
+        $cartItems = $this->user->load('carts.product');
+        
+        $data =  [   
             'user_id' => $this->user->id, 
             'total_price' => $this->total , 
             'noted' => $this->noted, 
             'status' => 'pending', 
         ]; 
 
-
-
+        
+        
         try {
+        DB::beginTransaction();
+        
+        $order = Order::create($data);
+        
+        foreach ($cartItems->carts as $item) {
+            OrderItem::create([
+                'order_id' => $order->id,
+                'product_id' => $item->product_id,
+                'quantity' => $item->quantity,
+                'price' => $item->product->price * $item->quantity,
+            ]);
+        }
 
+             // Buat item_details untuk setiap produk di cart
+        $itemDetails = $cartItems->carts->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'price' => $item->product->price,
+                'quantity' => $item->quantity,
+                'name' => $item->product->title,
+            ];
+        })->toArray();
+
+                  // Parameter transaksi
             $params = [
                 'transaction_details' => [
-                    'order_id' => 'AD'. now()->format('dmyhs'),
-                    'gross_amount' => $order['total_price'],
+                    'order_id' => $order->id,
+                    'gross_amount' => $order->total_price,
                 ],
+                'item_details' => $itemDetails, // Tambahkan item details
                 'expiry' => [
-                    'start_time' => date('Y-m-d H:i:s T'), // Tanggal & waktu sekarang
-                    'unit' => 'minutes', // Satuan waktu (minutes, hours, days)
-                    'duration' => 10 // Kadaluarsa dalam 60 menit
+                    'start_time' => date('Y-m-d H:i:s T'),
+                    'unit' => 'minutes',
+                    'duration' => 10,
                 ],
                 'customer_details' => [
                     'first_name' => $validated['name'],
@@ -98,46 +124,13 @@ class CartLayout extends Component {
                 ],
             ];
 
-            $snapToken = Snap::getSnapToken($params);
-            $this->dispatch('user-pay', token:$snapToken, order:$order); 
+            $paymentUrl = Snap::createTransaction($params)->redirect_url;
+            DB::commit();
+            return redirect($paymentUrl);
         } catch (\Throwable $th) {
-            //throw $th;
-        }
-
-    }
-
-    #[On('payment-success')] 
-    public function handleSuccess($result, $order){
-
-        try {
-            DB::beginTransaction();
-            $order['status'] = $result['transaction_status'];
-            $orderRecord = Order::create($order); 
-            $cartItems = $this->user->load('carts.product');
-               foreach ($cartItems->carts as $item) {
-                OrderItem::create([
-                    'order_id' => $orderRecord->id,
-                    'product_id' => $item->product_id,
-                    'quantity' => $item->quantity,
-                    'price' => $item->product->price * $item->quantity,
-                ]);
-
-             }
-            
-             DB::commit();
-            Toaster::success( 'Pembayaran Berhasil File Akan Dikirimkan Ke Email Anda' );
-            $this->dispatch( 'add-chart' );
-            $this->user->carts()->delete(); 
-            return redirect()->route('shopping-history');
-
-        } catch (\Throwable $th) {
-            Toaster::warning( 'Terjadi Kesalahan Coba Lagi Beberapa Saat' );
             DB::rollback();
             Log::info( $th );
         }
-    }
-    #[On('payment-closed')] 
-    public function handleClosed($result, $order){
-        Toaster::warning( 'Mohon Selesaikan Pembayaran Anda' );
+
     }
 }
