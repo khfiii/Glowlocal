@@ -10,6 +10,7 @@ class PaymentController extends Controller {
         $order = Order::findOrFail( $request->order_id );
         $order->status = $request->transaction_status;
         $order->save();
+        auth()->user()->carts()->delete();
 
         return redirect()->route( 'shopping-history' );
 
