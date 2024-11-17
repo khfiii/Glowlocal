@@ -1,11 +1,20 @@
-document.addEventListener('livewire:init', ()=>{
-    Livewire.on('user-pay', ({token}) => {
-        console.log('snap token ' + token);
+document.addEventListener("livewire:init", () => {
+    Livewire.on("user-pay", ({ token, order }) => {
         snap.pay(token, {
-            // onSuccess: function(result){console.log('success');console.log(result);},
+            onSuccess: function (result) {
+                Livewire.dispatch("payment-success", {
+                    result: result,
+                    order: order,
+                });
+            },
             // onPending: function(result){console.log('pending');console.log(result);},
             // onError: function(result){console.log('error');console.log(result);},
-            // onClose: function(){console.log('customer closed the popup without finishing the payment');}
-          })
+            onClose: function () {
+                Livewire.dispatch("payment-closed", {
+                    result: result,
+                    order: order,
+                });
+            },
+        });
     });
-})
+});

@@ -25,14 +25,13 @@
                         {{ __('Tentang') }}
                     </x-nav-link>
 
+
+                    @auth()
+                        <x-nav-link :href="route('shopping-history')" :active="request()->routeIs('shoping-history')" wire:navigate>
+                            {{ __('Riwayat Belanja') }}
+                        </x-nav-link>  
+                    @endauth
                      <livewire:cart-item/>
-
-                    @if (auth()->check())
-                        <x-nav-link :href="route('logout.get')" :active="request()->routeIs('login')" wire:navigate>
-                            {{ __('Logout') }}
-                        </x-nav-link>
-                    @endif
-
                     @guest
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
                             {{ __('Masuk') }}
@@ -88,8 +87,8 @@
             @endguest
 
             @auth()
-                <x-responsive-nav-link :href="route('logout.get')" :active="request()->routeIs('auth/logout')" wire:navigate>
-                    {{ __('Logout') }}
+                <x-responsive-nav-link :href="route('shopping-history')" :active="request()->routeIs('shopping-history')" wire:navigate>
+                    {{ __('Riwayat Belanja') }}
                 </x-responsive-nav-link>
             @endauth
         </div>

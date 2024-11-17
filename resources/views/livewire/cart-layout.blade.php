@@ -21,7 +21,7 @@
             <div class="grid md:grid-cols-3 gap-8 mt-4" x-data="{ items: {{ $cartItems }} }">
                 <div class="md:col-span-2 space-y-4">
                     <template x-for="(item, index) in items" :key="item.id">
-                        <div x-init="console.log(item, index)" x-data="{ quantity: item.quantity }"
+                        <div x-data="{ quantity: item.quantity }"
                             @change="Livewire.dispatch('updateQuantity', { itemId: item.id, quantity: quantity })"
                             class="grid grid-cols-3 items-start gap-4">
                             <div class="col-span-2 flex items-start gap-4">
@@ -154,4 +154,6 @@
             </div>
         </div>
     @endif
+
+        <div id="snap-container"></div>
 </div>

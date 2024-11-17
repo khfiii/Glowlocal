@@ -2,9 +2,16 @@
 
 namespace App\Livewire;
 
+use Midtrans\Snap;
+use App\Models\Cart;
+use App\Models\Order;
 use Livewire\Component;
 use App\Models\CartItem;
+use App\Models\OrderItem;
+use Livewire\Attributes\On;
 use Masmerise\Toaster\Toaster;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CartLayout extends Component {
 
@@ -38,24 +45,9 @@ class CartLayout extends Component {
         return view( 'livewire.cart-layout' );
     }
 
-    public function increase( CartItem $item ) {
-        if ( $item ) {
-            $item->quantity++;
-            $item->save();
-        }
-
-    }
-
-    public function decrease( CartItem $item ) {
-        if ( $item && $item->quantity > 1 ) {
-            $item->quantity--;
-            $item->save();
-        }
-    }
-
     public function updateQuantity($itemId, $quantity)
     {
-        $item = CartItem::find($itemId);
+        $item = Cart::find($itemId);
 
         if ($item) {
             $item->quantity = $quantity;
@@ -64,9 +56,7 @@ class CartLayout extends Component {
     }
 
     public function loadItems(){
-        $this->cartItems = auth()->check() && auth()->user()->cart
-        ? auth()->user()->cart->load( 'items.product.media' )->items
-        : collect();
+        $this->cartItems = Cart::with('product.media')->get();
 
         $this->subtotal = $this->cartItems->sum(function($item){
             return $item->product->price * $item->quantity; 
@@ -81,13 +71,73 @@ class CartLayout extends Component {
             'name' => 'required', 
         ]); 
 
-        $data = [
+        $order = [   
             'user_id' => $this->user->id, 
             'total_price' => $this->total , 
             'noted' => $this->noted, 
-
+            'status' => 'pending', 
         ]; 
 
-        dd($data); 
+
+
+        try {
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => 'AD'. now()->format('dmyhs'),
+                    'gross_amount' => $order['total_price'],
+                ],
+                'expiry' => [
+                    'start_time' => date('Y-m-d H:i:s T'), // Tanggal & waktu sekarang
+                    'unit' => 'minutes', // Satuan waktu (minutes, hours, days)
+                    'duration' => 10 // Kadaluarsa dalam 60 menit
+                ],
+                'customer_details' => [
+                    'first_name' => $validated['name'],
+                    'email' => $validated['email'],
+                ],
+            ];
+
+            $snapToken = Snap::getSnapToken($params);
+            $this->dispatch('user-pay', token:$snapToken, order:$order); 
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+    }
+
+    #[On('payment-success')] 
+    public function handleSuccess($result, $order){
+
+        try {
+            DB::beginTransaction();
+            $order['status'] = $result['transaction_status'];
+            $orderRecord = Order::create($order); 
+            $cartItems = $this->user->load('carts.product');
+               foreach ($cartItems->carts as $item) {
+                OrderItem::create([
+                    'order_id' => $orderRecord->id,
+                    'product_id' => $item->product_id,
+                    'quantity' => $item->quantity,
+                    'price' => $item->product->price * $item->quantity,
+                ]);
+
+             }
+            
+             DB::commit();
+            Toaster::success( 'Pembayaran Berhasil File Akan Dikirimkan Ke Email Anda' );
+            $this->dispatch( 'add-chart' );
+            $this->user->carts()->delete(); 
+            return redirect()->route('shopping-history');
+
+        } catch (\Throwable $th) {
+            Toaster::warning( 'Terjadi Kesalahan Coba Lagi Beberapa Saat' );
+            DB::rollback();
+            Log::info( $th );
+        }
+    }
+    #[On('payment-closed')] 
+    public function handleClosed($result, $order){
+        Toaster::warning( 'Mohon Selesaikan Pembayaran Anda' );
     }
 }

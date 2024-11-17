@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Cart;
 use App\Models\Website;
 use App\Models\Category;
 use Illuminate\Support\Str;
@@ -41,5 +42,11 @@ class Product extends Model implements HasMedia {
                 
         });
     }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
 
 }

@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Filament\Panel;
 use App\Models\Cart;
+use App\Models\Order;
 use App\Mails\QueuedVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Devdojo\Auth\Models\User as AuthUser;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -50,24 +51,17 @@ class User extends Authenticatable implements  MustVerifyEmail, FilamentUser, Sh
         ];
     }
 
-    protected static function booted()
-    {
-        static::created(function ($user) {
-            // Buat keranjang aktif untuk user baru
-            Cart::create([
-                'user_id' => $user->id,
-                'is_active' => true,
-            ]);
-        });
-    }
-
     public function canAccessPanel( Panel $panel ): bool {
         return true;
 
     }
 
-    public function cart() {
-        return $this->hasOne( Cart::class );
+    public function carts() {
+        return $this->hasMany( Cart::class );
+    }
+
+    public function orders() {
+        return $this->hasMany( Order::class );
     }
 
 }

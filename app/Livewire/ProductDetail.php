@@ -29,7 +29,7 @@ class ProductDetail extends Component {
 
         $user = auth()->user();
 
-        if ( !auth()->user()->cart ) {
+        if ( !auth()->user()->carts ) {
             Toaster::warning( 'Fitur Keranjang Belum Aktif' );
         }
 
@@ -37,24 +37,18 @@ class ProductDetail extends Component {
 
             DB::beginTransaction();
 
-            if ( $existing = $user->cart->items->where( 'product_id', $product->id )->first() ) {
-                // Jika item sudah ada, tambahkan quantity
-                $existing->quantity += 1;
-                $existing->price = $product->price * $existing->quantity;
-                $existing->save();
-            } else {
-                $user->cart->items()->create( [
-                    'product_id' => $product->id,
-                    'quantity' => 1,
-                    'price' => $product->price
-                ] );
-            }
+            $user->carts()->create( [
+                'product_id' => $product->id,
+                'quantity' => 1,
+            ] );
 
             DB::commit();
             $this->dispatch( 'add-chart' );
             Toaster::success( 'Berhasil memasukan ke keranjang' );
 
         } catch ( \Throwable $th ) {
+            dd( $th );
+
             Toaster::warning( 'Terjadi Kesalahan Coba Lagi Beberapa Saat' );
             DB::rollback();
             Log::info( $th );

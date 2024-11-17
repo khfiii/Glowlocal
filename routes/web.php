@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\ShoppingController;
 
 Route::get( '/', [ HomeController::class, 'index' ] )->name( 'home' );
 Route::get( 'produk', [ ProductController::class, 'index' ] )->name( 'product' );
@@ -21,6 +22,18 @@ Route::get( 'product/{product:slug}', [ ProductController::class, 'detail' ] )->
 Route::view( '/tentang', 'pages.contact' )->name( 'contact' );
 Route::get( '/artikel', [ BlogController::class, 'index' ] )->name( 'artikel' );
 Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail.blog' );
+
+Route::get('shopping-history', [ShoppingController::class, 'index'])
+->name('shopping-history');
+
+Route::get('orders/success', function(){
+    return view('payment.finish');
+});
+
+Route::get('orders/errors', function(){
+    return view('payment.error');
+});
+
 Route::get( '/cart', [ CartController::class, 'index' ] )
 ->middleware( [ 'auth' ] )
 ->name( 'cart' );
