@@ -14,7 +14,7 @@ class CartItem extends Component {
 
     public function render() {
         return view( 'livewire.cart-item', [
-            'cartCounts' => Cart::count() ,
+            'cartCounts' => Cart::where( 'user_id', auth()->user()->id )->count() ,
         ] );
     }
 }
