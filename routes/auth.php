@@ -49,7 +49,7 @@ Route::get('/auth/redirect', function () {
 })->name('google-login');
 
 Route::get('/auth/google/callback', function () {
-    $userGoogle = Socialite::driver('google')->user();
+    $userGoogle = Socialite::driver('google')->stateless()->user();
 
     $user = User::updateOrCreate(
         ['email' => $userGoogle->getEmail()],  // Kondisi pencarian berdasarkan email
