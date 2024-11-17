@@ -56,7 +56,7 @@ class CartLayout extends Component {
     }
 
     public function loadItems(){
-        $this->cartItems = Cart::with('product.media')->get();
+        $this->cartItems = Cart::where('user_id', auth()->user()->id)->with('product.media')->get();
 
         $this->subtotal = $this->cartItems->sum(function($item){
             return $item->product->price * $item->quantity; 
