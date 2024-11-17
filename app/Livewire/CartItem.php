@@ -13,8 +13,11 @@ class CartItem extends Component {
     ];
 
     public function render() {
+
+        $cartCounts = auth()->check() ? Cart::where( 'user_id', auth()->user()->id )->count() : 0;
+
         return view( 'livewire.cart-item', [
-            'cartCounts' => Cart::where( 'user_id', auth()->user()->id )->count() ,
+            'cartCounts' => $cartCounts,
         ] );
     }
 }
