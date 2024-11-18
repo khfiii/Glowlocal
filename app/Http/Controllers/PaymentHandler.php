@@ -22,7 +22,7 @@ class PaymentHandler extends Controller {
         $signatureKey = $data[ 'signature_key' ];
 
         // validate request from midtrans
-        $validateSignature = hash( 'sha512', $orderId.$statusCode.$grossAmount.config( 'midtrans.stagging.server_key' ) );
+        $validateSignature = hash( 'sha512', $orderId.$statusCode.$grossAmount.config( 'midtrans.production.server_key' ) );
 
         if ( $signatureKey != $validateSignature ) {
             return response()->json( [
