@@ -23,7 +23,7 @@ class CartLayout extends Component {
     public $name; 
     public $noted; 
     public $cartItems;
-
+    
     public function removeItem(Cart $item ) {
         $item->delete();
         $this->dispatch( 'add-chart' );

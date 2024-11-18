@@ -27,9 +27,6 @@ Route::get( '/blog/{slug}', [ BlogController::class, 'detail' ] )->name( 'detail
 Route::get( 'shopping-history', [ ShoppingController::class, 'index' ] )
 ->name( 'shopping-history' );
 
-Route::get( 'orders/status/', [ PaymentController::class, 'index' ] )
-->middleware( [ 'auth', 'payment' ] );
-
 Route::get( '/cart', [ CartController::class, 'index' ] )
 ->middleware( [ 'auth' ] )
 ->name( 'cart' );
