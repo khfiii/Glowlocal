@@ -66,5 +66,9 @@ class PaymentHandler extends Controller {
             ] );
         }
 
+        return response()->json( [
+            'message' => 'success'
+        ], 200 );
+
     }
 }
