@@ -37,10 +37,12 @@ class ProductDetail extends Component {
 
             DB::beginTransaction();
 
-            $user->carts()->create( [
-                'product_id' => $product->id,
-                'quantity' => 1,
-            ] );
+            $user->carts()->updateOrCreate(
+                // Kondisi pencocokan
+                [ 'product_id' => $product->id ],
+                // Data yang akan diupdate atau dibuat
+                [ 'quantity' => DB::raw( 'quantity + 1' ) ]
+            );
 
             DB::commit();
             $this->dispatch( 'add-chart' );
