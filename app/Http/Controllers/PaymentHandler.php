@@ -53,10 +53,10 @@ class PaymentHandler extends Controller {
         if ( $transactionStatus == 'settlement' ) {
             $discord->sendEmbedMessage(
                 'New Orders',
-                "**Name:** {$user->name}\n"
+                "**Order ID:** #{$orderId}\n"
+                ."**Name:** {$user->name}\n"
                 . "**Email:** {$user->email}\n"
                 . "**Transaction Status:** {$transactionStatus}\n"
-                . "**Orders:** Order ID #{$orderId}\n"
                 . '**Gross Amount:** ' . formatRupiah( $grossAmount )
             );
 
