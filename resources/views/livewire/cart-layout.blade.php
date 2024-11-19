@@ -145,11 +145,11 @@
                             <button type="submit" wire:loading.attr="disabled"
                                 class="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-gray-800 hover:bg-gray-900 text-white rounded-md">
 
-                                <div class="" wire:loading.remove>
+                                <div class="" wire:loading.remove wire:target="checkout">
                                     Checkout
                                 </div>
 
-                                <div role="status" wire:loading class="w-[7rem]">
+                                <div role="status" wire:loading class="w-[7rem]" wire:target="checkout">
                                     <svg aria-hidden="true"
                                         class="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                                         viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
