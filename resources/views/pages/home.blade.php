@@ -20,7 +20,7 @@
                     Aesthetic Digital Creations</span>
                 </h1>
                 <p class="mb-8 leading-relaxed">
-                    Temukan Koleksi Template Desain, Ebook dan Produk Digital Premium Untukmu!
+                    Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium lainnya khusus untukmu.
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
                     <a href="{{ route('product') }}" class="relative inline-block px-4 py-2 font-medium group">
