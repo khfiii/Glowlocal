@@ -5,7 +5,7 @@
     @push('meta')
         <meta name="description"
             content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
-        <meta name="keywords" content="glowlocal, produk digital murah, ebook, template website modern">
+        <meta name="keywords" content="glowlocal, produk digital, ebook, aesthetic produk, template website modern">
         <meta property="og:title" content="Tempatnya produk digital berkualitas tinggi">
         <meta property="og:description"
             content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
@@ -15,23 +15,33 @@
     <section class="text-gray-600 body-font pt-8">
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900">Elevate Your Workflow with
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif">Elevate Your
+                    Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
                 <p class="mb-8 leading-relaxed">
                     Temukan Koleksi Template Desain, Ebook dan Produk Digital Premium Untukmu!
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
-                    <a href="{{ route('product') }}"
-                        class="inline-flex bg-gray-800 text-white py-2 px-6 focus:outline hover:bg-transparent hover:outline hover:text-gray-600 hover:outline-1 rounded text-lg">
-                        <span class="w-full text-center">Jelajahi Produk</span>
+                    <a href="{{ route('product') }}" class="relative inline-block px-4 py-2 font-medium group">
+                        <span
+                            class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span
+                            class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <div class="w-full relative text-center">
+                            <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
+                        </div>
                     </a>
 
-                    <a href="{{ route('contact') }}"
-                        class="inline-flex outline outline-1 py-2 px-6 focus:outline-none hover:bg-gray-600 hover:text-white rounded text-lg">
-                        <span class="w-full text-center">Tentang Kami</span>
+                    <a href="{{ route('contact') }}" class="relative inline-block px-4 py-2 font-medium group">
+                        <span
+                            class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span
+                            class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <div class="w-full relative text-center">
+                            <span class=" text-black group-hover:text-white font-serif">Tentang Kami</span>
+                        </div>
                     </a>
-
                 </div>
             </div>
         </div>
