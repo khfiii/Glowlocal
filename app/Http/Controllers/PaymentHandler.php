@@ -53,7 +53,7 @@ class PaymentHandler extends Controller {
         if ( $transactionStatus == 'settlement' ) {
             $discord->sendEmbedMessage(
                 'New Orders',
-                "**Order ID:** #{$orderId}\n"
+                '**Order ID:**'.Str::before( $orderId, '-' ). '\n'
                 ."**Name:** {$user->name}\n"
                 . "**Email:** {$user->email}\n"
                 . "**Transaction Status:** {$transactionStatus}\n"
