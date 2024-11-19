@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Services\DiscordWebhook;
 use Illuminate\Support\Facades\Log;
 use Barryvdh\Debugbar\Twig\Extension\Debug;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
@@ -13,7 +14,7 @@ class PaymentHandler extends Controller {
     * Handle the incoming request.
     */
 
-    public function __invoke( Request $request ) {
+    public function __invoke( Request $request, DiscordWebhook $discord ) {
         $data = $request->all();
 
         $orderId = $data[ 'order_id' ];
@@ -50,20 +51,15 @@ class PaymentHandler extends Controller {
         $order->save();
 
         if ( $transactionStatus == 'settlement' ) {
-            DiscordAlert::message( '', [
-                [
-                    'title' => 'New Orders',
-                    'description' => "**Name:** {$user->name}\n"
-                    . "**Email:** {$user->email}\n"
-                    . '**Transaction Status:** Success\n'
-                    . "**Orders:** Order ID #{$orderId}\n"
-                    . '**Gross Amount:** '.formatRupiah( $grossAmount ),
-                    'color' => '#1c71d8',
-                    'footer' => [
-                        'text' => 'Transaction processed on ' . $order->created_at->toDateTimeString()
-                    ]
-                ]
-            ] );
+            $discord->sendEmbedMessage(
+                'New Orders',
+                "**Name:** {$user->name}\n"
+                . "**Email:** {$user->email}\n"
+                . "**Transaction Status:** {$transactionStatus}\n"
+                . "**Orders:** Order ID #{$orderId}\n"
+                . '**Gross Amount:** ' . formatRupiah( $grossAmount )
+            );
+
         }
 
         return response()->json( [

@@ -13,6 +13,9 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'discord' =>[
+        'webhook_url' => env( 'DISCORD_ALERT_WEBHOOK' )
+    ],
 
     'postmark' => [
         'token' => env( 'POSTMARK_TOKEN' ),
