@@ -35,6 +35,9 @@ new #[Layout('layouts.guest')] class extends Component {
     }
 }; ?>
 
+@section('page-title', 'Register')
+
+
 
 
 <div>

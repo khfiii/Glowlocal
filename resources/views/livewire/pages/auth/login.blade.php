@@ -23,6 +23,8 @@ new #[Layout('layouts.guest')] class extends Component {
     }
 }; ?>
 
+@section('page-title', 'Login')
+
 <div>
     <div class="w-full mb-4">
 
