@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Services\DiscordWebhook;
 use Illuminate\Support\Facades\Log;
