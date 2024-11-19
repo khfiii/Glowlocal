@@ -6,6 +6,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Barryvdh\Debugbar\Twig\Extension\Debug;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
 class PaymentHandler extends Controller {
     /**
@@ -47,6 +48,23 @@ class PaymentHandler extends Controller {
         $order->status = $transactionStatus;
 
         $order->save();
+
+        if ( $transactionStatus == 'settlement' ) {
+            DiscordAlert::message( '', [
+                [
+                    'title' => 'New Orders',
+                    'description' => "**Name:** {$user->name}\n"
+                    . "**Email:** {$user->email}\n"
+                    . '**Transaction Status:** Success\n'
+                    . "**Orders:** Order ID #{$orderId}\n"
+                    . '**Gross Amount:** '.formatRupiah( $grossAmount ),
+                    'color' => '#1c71d8',
+                    'footer' => [
+                        'text' => 'Transaction processed on ' . $order->created_at->toDateTimeString()
+                    ]
+                ]
+            ] );
+        }
 
     }
 }
