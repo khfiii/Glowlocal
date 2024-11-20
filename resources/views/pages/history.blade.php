@@ -7,51 +7,62 @@
         @if ($orders->isNotEmpty())
 
             <div class="space-y-4">
-                        <a href="https://wa.me/+6283870978537?text=Hallo Ada Ka Ada Yang Mau Saya Tanyakan"
-                class="p-2 text-sm rounded-md bg-green-500 text-white mb-4">Chat
-                Penjual</a>
-            <div class="grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-                <!-- Order Card 1 -->
-                @foreach ($orders as $order)
-                    @foreach ($order->items as $item)
-                        <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <div class="p-6">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div>
-                                        <p class="text-sm text-gray-600">Order
-                                            #{{ Str::before($order->id, '-')}}</p>
-                                        <p class="text-sm text-gray-600">{{ $order->created_at->format('d F Y') }}</p>
-                                    </div>
-
-                                    @if ($order->status == 'settlement')
-                                        <span
-                                            class="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Sukses</span>
-                                    @else
-                                        <span
-                                            class="px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-500">{{ $order->status }}</span>
-                                    @endif
-                                </div>
-                                <div class="space-y-3">
-                                    <div class="flex items-center gap-4">
-                                        <img src="{{ $item->product->getFirstMediaUrl('product_images') }}"
-                                            loading="lazy" alt="{{ $item->product->name }}"
-                                            class="w-16 h-16 rounded-lg object-cover">
+                <a href="https://wa.me/+6283870978537?text=Hallo Ada Ka Ada Yang Mau Saya Tanyakan"
+                    class="p-2 text-sm rounded-md bg-green-500 text-white mb-4">Chat
+                    Penjual</a>
+                <div class="grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                    <!-- Order Card 1 -->
+                    @foreach ($orders as $order)
+                        @foreach ($order->items as $item)
+                            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-4">
                                         <div>
-                                            <p class="font-medium">{{ $item->product->title }}</p>
-                                            <p class="text-sm text-gray-600">Jumlah : {{ $item->quantity }}</p>
+                                            <p class="text-sm text-gray-600">Order
+                                                #{{ Str::before($order->id, '-') }}</p>
+                                            <p class="text-sm text-gray-600">{{ $order->created_at->format('d F Y') }}
+                                            </p>
+                                        </div>
+
+                                        @if ($order->status == 'settlement')
+                                            <span
+                                                class="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Sukses</span>
+                                        @else
+                                            <span
+                                                class="px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-500">{{ $order->status }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-4">
+                                            <img src="{{ $item->product->getFirstMediaUrl('product_images') }}"
+                                                loading="lazy" alt="{{ $item->product->name }}"
+                                                class="w-16 h-16 rounded-lg object-cover">
+                                            <div>
+                                                <p class="font-medium">{{ $item->product->title }}</p>
+                                                <p class="text-sm text-gray-600">Jumlah : {{ $item->quantity }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
-                                    <p class="font-medium">Total: {{ formatRupiah($item->price) }}</p>
+                                    <div class="flex justify-between items-center mt-4">
+                                        <div class="border-t border-gray-100 flex justify-between items-center">
+                                            <p class="font-medium">Total: {{ formatRupiah($item->price) }}</p>
+                                        </div>
+
+                                        @if ($order->status == 'settlement')
+                                            <a href="{{ $item->product->product_url }}" class="flex gap-1 items-center">
+                                                <x-hugeicons-file-download class="w-5 h-5 text-gray-700" />
+                                                <small class="text-gray-700">Download</small>
+                                            </a>
+                                        @endif
+
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     @endforeach
-                @endforeach
+                </div>
             </div>
-            </div>
-
         @else
             <div class="min-h-60 flex flex-col bg-white border shadow-sm rounded-xl">
                 <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
