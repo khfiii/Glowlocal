@@ -29,7 +29,7 @@
                     Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
-                <p class="mb-7 leading-relaxed">
+                <p class="mb-8 leading-relaxed">
                     Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium 
                     lainnya
                     khusus untukmu ✨
