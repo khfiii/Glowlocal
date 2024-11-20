@@ -9,6 +9,8 @@ use Filament\Forms\Get;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use RalphJSmit\Filament\SEO\SEO;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Textarea;
@@ -35,10 +37,6 @@ class ProductResource extends Resource {
             ->required(),
             TextInput::make( 'rating' )
             ->required(),
-            Checkbox::make( 'is_affiliate' )
-            ->label( 'Affiliate' )
-            ->inline()
-            ->live(),
             Select::make( 'category_id' )
             ->required()
             ->relationship( name: 'category', titleAttribute: 'name' )
@@ -48,9 +46,6 @@ class ProductResource extends Resource {
             ] ),
             TextInput::make( 'price' )
             ->required(),
-            TextInput::make( 'affiliate_link' )
-            ->visible( fn( Get $get ) => $get( 'is_affiliate' ) )
-            ->required(),
             MarkdownEditor::make( 'description' )
             ->required()
             ->hidden( fn( Get $get )=> $get( 'is_affiliate' ) ),
@@ -59,7 +54,12 @@ class ProductResource extends Resource {
             ->optimize( 'webp' )
             ->multiple()
             ->image()
-            ->required()
+            ->required(),
+            TextInput::make( 'product_url' )
+            ->required(),
+            Card::make( [
+                SEO::make()
+            ] ),
         ] );
     }
 

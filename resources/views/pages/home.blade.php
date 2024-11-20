@@ -5,10 +5,10 @@
     @push('meta')
         <meta name="description"
             content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
-        <meta name="keywords" content="glowlocal, produk digital, aesthetic produk, digital printing, digital printing aesthetic">
-        <meta property="og:title" content="Tempatnya produk digital berkualitas tinggi">
+        <meta name="keywords" content="glowlocal, produk digital, desain produk aesthetic, digital printing">
+        <meta property="og:title" content="Tempatnya produk digital aesthetic">
         <meta property="og:description"
-            content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk digital terbaik">
+            content="Temukan pilihan produk digital berkualitas tinggi nan aesthetic dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk digital terbaik">
     @endpush
 
 

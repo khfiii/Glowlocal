@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('title'); 
             $table->string('slug');
+            $table->text('product_url');
             $table->string('rating')->nullable(); 
             $table->longText('description')->nullable(); 
             $table->foreignIdFor(Category::class)->constrained()->onDelete('cascade'); 
-            $table->boolean('is_affiliate')->default(false);
-            $table->string('affiliate_link')->nullable(); 
             $table->integer('price'); 
             $table->timestamps();
         });

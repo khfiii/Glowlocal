@@ -1,9 +1,15 @@
 <x-app-layout>
     @section('page-title', $product->title)
 
+    @push('meta')
+        <meta name="description"
+            content="{{ $product->seo->description }}">
+        <meta property="og:title" content="{{ $product->seo->title }}">
+        <meta property="og:description"
+            content="{{ $product->seo->description }}">
+    @endpush
+
     <div class="font-sans">
-
-
         <nav class="flex md:ms-4" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">

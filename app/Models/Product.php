@@ -9,11 +9,13 @@ use Illuminate\Support\Str;
 use App\Models\CategoryProduct;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Product extends Model implements HasMedia {
-    use InteractsWithMedia;
+    use InteractsWithMedia, HasSEO;
 
     protected $guarded = [ 'id' ];
 

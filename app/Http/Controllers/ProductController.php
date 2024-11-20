@@ -12,6 +12,8 @@ class ProductController extends Controller {
     }
 
     public function detail( Product $product ) {
+
+        $product = $product->load( 'category', 'media', 'seo' );
         return view( 'pages.product-detail', compact( 'product' ) );
     }
 }
