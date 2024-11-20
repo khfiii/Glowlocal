@@ -30,7 +30,7 @@
                     Aesthetic Digital Creations</span>
                 </h1>
                 <p class="mb-7 leading-relaxed">
-                    Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium nan aesthetic
+                    Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium 
                     lainnya
                     khusus untukmu ✨
                 </p>
