@@ -5,18 +5,18 @@
     @push('meta')
         <meta name="description"
             content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
-        <meta name="keywords" content="glowlocal, produk digital, ebook, aesthetic produk, template website modern">
+        <meta name="keywords" content="glowlocal, produk digital, aesthetic produk, digital printing, digital printing aesthetic">
         <meta property="og:title" content="Tempatnya produk digital berkualitas tinggi">
         <meta property="og:description"
-            content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
+            content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk digital terbaik">
     @endpush
 
 
     <section class="text-gray-600 body-font pt-8 -mt-10 space-y-4">
-        <div class="grid grid-cols-2 w-full md:px-[18rem]">
+        <div class="grid grid-cols-2 w-full md:px-[18rem] gap-1">
             <div class="">
                 <img src="{{ asset('product1.webp') }}"
-                    alt="Aesthetic Digital Printing Design">
+                    alt="Aesthetic Digital Printing Design" class="">
             </div>
             <div class="">
                 <img src="{{ asset('product2.webp') }}"
@@ -29,8 +29,8 @@
                     Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
-                <p class="mb-8 leading-relaxed">
-                    Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium
+                <p class="mb-7 leading-relaxed">
+                    Jelajahi beragam koleksi template desain kreatif, ebook keren, dan produk digital premium nan aesthetic
                     lainnya
                     khusus untukmu ✨
                 </p>
@@ -41,7 +41,7 @@
                         <span
                             class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                         <div class="w-full relative text-center">
-                            <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
+                            <span class=" text-black group-hover:text-white font-serif">Explore Our Products</span>
                         </div>
                     </a>
                 </div>
