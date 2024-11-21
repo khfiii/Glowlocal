@@ -23,7 +23,7 @@
         </div>
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif">Elevate Your
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif text-center">Elevate Your
                     Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
