@@ -35,7 +35,7 @@
                         silakan hubungi layanan pelanggan Glowlocal melalui:
 
                     <div class="flex flex-col gap-1 pt-4">
-                        <a href="mailto:glowlocal.bussiness@gmail.com?subject=Halo&body=Saya%20ingin%20bertanya%20tentang%20produk%20Anda"
+                        <a href="https://wa.me/6283870978537?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda"
                             target="_blank" class="flex gap-2 text-green-500">
                             <x-hugeicons-whatsapp class="text-green-500" />
                             Whatsapp
