@@ -26,7 +26,7 @@
             </p>
         </header>
 
-        <div class="content space-y-2 text-gray-800">
+        <div class="content space-y-2 text-gray-800 text-sm prose prose-sm">
            {!! str($artikel->content)->markdown()->sanitizeHtml() !!}
         </div>
     </article>
