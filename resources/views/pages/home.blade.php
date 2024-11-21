@@ -13,7 +13,7 @@
 
 
     <section class="text-gray-600 body-font pt-8 -mt-10 space-y-4">
-        <div class="grid grid-cols-2 w-full md:px-[18rem] gap-1">
+        <div class="grid grid-cols-2 w-full md:px-[18rem]">
             <div class="">
                 <img src="{{ asset('product1.webp') }}" alt="Aesthetic Digital Printing Design" class="">
             </div>
