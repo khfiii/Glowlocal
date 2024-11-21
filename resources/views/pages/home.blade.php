@@ -15,12 +15,10 @@
     <section class="text-gray-600 body-font pt-8 -mt-10 space-y-4">
         <div class="grid grid-cols-2 w-full md:px-[18rem] gap-1">
             <div class="">
-                <img src="{{ asset('product1.webp') }}"
-                    alt="Aesthetic Digital Printing Design" class="">
+                <img src="{{ asset('product1.webp') }}" alt="Aesthetic Digital Printing Design" class="">
             </div>
             <div class="">
-                <img src="{{ asset('product2.webp') }}"
-                    alt="Aesthetic Digital Printing">
+                <img src="{{ asset('product2.webp') }}" alt="Aesthetic Digital Printing">
             </div>
         </div>
         <div class="container flex justify-center">
@@ -30,7 +28,7 @@
                     Aesthetic Digital Creations</span>
                 </h1>
                 <p class="mb-8 leading-relaxed">
-                    Jelajahi Beragam Koleksi Template Desain Kreatif, Ebook Keren, dan Produk Digital Premium 
+                    Jelajahi Beragam Koleksi Template Desain Kreatif, Ebook Keren, dan Produk Digital Premium
                     lainnya
                     Khusus Untukmu ✨
                 </p>
@@ -48,7 +46,4 @@
             </div>
         </div>
     </section>
-
-
-
 </x-app-layout>

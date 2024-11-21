@@ -5,7 +5,6 @@
     @endpush
 
     <div class="bg-white">
-
         <div class="flex justify-center flex-col items-center gap-4">
             <div class="bg-white">
                 <div class="mr-20 text-gray-600 lg:col-span-5 w-full md:max-w-2xl p-4 border">
@@ -31,12 +30,17 @@
             <div class="bg-white">
                 <div class="mr-20 text-gray-600 lg:col-span-5 w-full md:max-w-2xl p-4 border">
                     <h1 class="mb-1 text-xl font-bold">Kontak</h1>
-                    <p class="">
+                    <p class="flex flex-col gap-2">
                         Jika memiliki pertanyaan atau memerlukan bantuan terkait dengan transaksi pembayaran,
-                        silakan hubungi layanan pelanggan Glowlocal melalui: <br> <br>
+                        silakan hubungi layanan pelanggan Glowlocal melalui:
 
-                        Email: glowlocal.bussiness@gmail.com <br>
-                        Telepon: +62 838 709 78537
+                    <div class="flex flex-col gap-1 pt-4">
+                        <a href="mailto:glowlocal.bussiness@gmail.com?subject=Halo&body=Saya%20ingin%20bertanya%20tentang%20produk%20Anda"
+                            target="_blank" class="flex gap-2 text-green-500">
+                            <x-hugeicons-whatsapp class="text-green-500" />
+                            Whatsapp
+                        </a>
+                    </div>
                     </p>
                 </div>
             </div>
