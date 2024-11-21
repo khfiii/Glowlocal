@@ -48,6 +48,9 @@
               </button>
           </div>
       </div>
+  
+  @if($product->description)
+    
       <div class="mt-8 space-y-1">
           <h3 class="text-xl font-bold text-gray-800">Deskripsi Produk</h3>
 
@@ -55,4 +58,6 @@
               {!! Str::markdown($product->description) !!}
           </div>
       </div>
+    
+  @endif
   </div>

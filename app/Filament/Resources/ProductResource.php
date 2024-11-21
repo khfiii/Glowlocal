@@ -47,11 +47,11 @@ class ProductResource extends Resource {
             TextInput::make( 'price' )
             ->required(),
             MarkdownEditor::make( 'description' )
-            ->required()
             ->hidden( fn( Get $get )=> $get( 'is_affiliate' ) ),
             SpatieMediaLibraryFileUpload::make( 'image' )
             ->collection( 'product_images' )
             ->optimize( 'webp' )
+            ->resize( 50 )
             ->multiple()
             ->image()
             ->required(),
