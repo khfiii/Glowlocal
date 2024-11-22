@@ -6,7 +6,6 @@
     @endpush
 
     @if ($artikels->isNotEmpty())
-
         <section class="space-y-4">
             <h1 class="font-serif text-xl">Baca Artikels</h1>
             <div class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
