@@ -15,10 +15,10 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                         {{ __('Beranda') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
+                    <x-nav-link :href="route('product')" :active="request()->routeIs('product') || request()->is('product/*')" wire:navigate>
                         {{ __('Produk') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('artikel')" :active="request()->routeIs('artikel')" wire:navigate>
+                    <x-nav-link :href="route('artikel')" :active="request()->routeIs('artikel') || request()->is('artikel/*')" wire:navigate>
                         {{ __('Artikel') }}
                     </x-nav-link>
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
@@ -69,11 +69,11 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Beranda') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
+            <x-responsive-nav-link :href="route('product')" :active="request()->routeIs('product') || request()->is('product/*')" wire:navigate>
                 {{ __('Produk') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('artikel')" :active="request()->routeIs('artikel')" wire:navigate>
+            <x-responsive-nav-link :href="route('artikel')" :active="request()->routeIs('artikel') || request()->is('artikel/*')" wire:navigate>
                 {{ __('Artikel') }}
             </x-responsive-nav-link>
 
