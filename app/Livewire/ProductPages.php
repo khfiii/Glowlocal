@@ -12,7 +12,7 @@ use Illuminate\Support\Collection;
 
 class ProductPages extends Component {
 
-    public int $onPage = 5;
+    public int $onPage = 10;
 
     public $categoryId = null;
 
