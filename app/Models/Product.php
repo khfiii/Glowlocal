@@ -13,9 +13,10 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model implements HasMedia {
-    use InteractsWithMedia, HasSEO;
+    use InteractsWithMedia, HasSEO, HasFactory;
 
     protected $guarded = [ 'id' ];
 

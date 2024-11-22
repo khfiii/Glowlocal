@@ -18,16 +18,17 @@
                 <img src="{{ asset('product1.webp') }}" alt="Aesthetic Digital Printing Design" class="">
             </div>
             <div class="">
-                <img src="{{ asset('product2.webp'  ) }}" alt="Aesthetic Digital Printing">
+                <img src="{{ asset('product2.webp') }}" alt="Aesthetic Digital Printing">
             </div>
         </div>
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif text-center">Elevate Your
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif text-center">Elevate
+                    Your
                     Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
-                <p class="mb-8 leading-relaxed font-serif text-justify md:text-center">
+                <p class="mb-8 leading-relaxed font-serif text-center">
                     Jelajahi Beragam Koleksi Template Desain Kreatif, Ebook Keren, dan Produk Digital Premium
                     lainnya
                     Khusus Untukmu ✨

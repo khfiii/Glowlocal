@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Database\Seeders\CategoryProductSeeder;
 
@@ -21,8 +22,10 @@ class DatabaseSeeder extends Seeder
             'password' => 'Kahfi635@',
         ]);
 
+        
         $this->call([
             CategoryProductSeeder::class
         ]);
+        Product::factory()->count(50)->create(); 
     }
 }
