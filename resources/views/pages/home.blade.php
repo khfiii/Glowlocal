@@ -27,7 +27,7 @@
                     Workflow with
                     Aesthetic Digital Creations</span>
                 </h1>
-                <p class="mb-8 leading-relaxed font-serif text-justify">
+                <p class="mb-8 leading-relaxed font-serif text-justify md:text-center">
                     Jelajahi Beragam Koleksi Template Desain Kreatif, Ebook Keren, dan Produk Digital Premium
                     lainnya
                     Khusus Untukmu ✨
