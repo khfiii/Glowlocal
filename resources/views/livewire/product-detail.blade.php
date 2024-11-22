@@ -32,7 +32,7 @@
               </button>
               </button>
               <button type="button"
-                  class="p-2 bg-gray-200 text-xs text-gray-800 rounded-md flex items-center col-span-4">
+                  class="p-2 bg-gray-200 text-xs text-gray-800 rounded-md flex items-center col-span-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-3 mr-1" fill="currentColor" viewBox="0 0 32 32">
                       <path
                           d="M14.236 21.954h-3.6c-.91 0-1.65-.74-1.65-1.65v-7.201c0-.91.74-1.65 1.65-1.65h3.6a.75.75 0 0 1 .75.75v9.001a.75.75 0 0 1-.75.75zm-3.6-9.001a.15.15 0 0 0-.15.15v7.2a.15.15 0 0 0 .15.151h2.85v-7.501z"
