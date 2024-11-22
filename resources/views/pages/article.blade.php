@@ -11,7 +11,7 @@
             <h1 class="font-serif text-xl">Baca Artikels</h1>
             <div class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                 @foreach ($artikels as $artikel)
-                    <article class="flex flex-col dark:bg-gray-50 p-2">
+                    <article class="flex flex-col dark:bg-gray-50 md:p-2">
                         <a href="{{ route('detail.article', ['slug' => $artikel->slug]) }}"
                             aria-label="{{ $artikel->title }}">
                             <img alt="{{ $artikel->name }}" class="object-cover w-full h-52 dark:bg-gray-500"
