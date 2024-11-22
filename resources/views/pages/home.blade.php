@@ -5,7 +5,7 @@
     @push('meta')
         <meta name="description"
             content="Temukan pilihan produk digital berkualitas tinggi dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk terbaik">
-        <meta name="keywords" content="glowlocal, produk digital, desain produk aesthetic, digital printing">
+        <meta name="keywords" content="glowlocal, produk digital, desain produk aesthetic, digital printing ideas 2024">
         <meta property="og:title" content="Glowlocal Shop">
         <meta property="og:description"
             content="Temukan pilihan produk digital berkualitas tinggi nan aesthetic dengan harga terjangkau. Glowlocal hadir untuk memenuhi kebutuhanmu akan produk digital terbaik">
@@ -18,7 +18,7 @@
                 <img src="{{ asset('product1.webp') }}" alt="Aesthetic Digital Printing Design" class="">
             </div>
             <div class="">
-                <img src="{{ asset('product2.webp') }}" alt="Aesthetic Digital Printing">
+                <img src="{{ asset('product2.webp'  ) }}" alt="Aesthetic Digital Printing">
             </div>
         </div>
         <div class="container flex justify-center">
