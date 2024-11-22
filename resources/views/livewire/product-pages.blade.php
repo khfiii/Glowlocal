@@ -5,10 +5,12 @@
     <div class="flex w-full justify-center">
         <div class="max-w-2xl w-full space-y-4">
 
+        @dump($categoryId)
+
             <select id="countries"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full md:w-[14rem] p-2.5"
                 x-on:change="$wire.setCategoryId($event.target.value)">
-                <option selected>Filter Berdasarkan Kategori</option>
+                <option value="" selected>Filter Berdasarkan Kategori</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">
                         {{ $category->name }}

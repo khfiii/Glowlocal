@@ -19,7 +19,7 @@ class ProductPages extends Component {
     #[ Computed ]
 
     public function products(): Collection {
-        if ( is_null( $this->categoryId ) ) {
+        if ( is_null( $this->categoryId ) || $this->categoryId == '' ) {
             return Product::with( 'category', 'media' )->latest()->take( $this->onPage )->get();
         } else {
             return Product::where( 'category_id', $this->categoryId )->with( 'category', 'media' )->latest()->take( $this->onPage )->get();
