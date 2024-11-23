@@ -1,6 +1,6 @@
   <div class="lg:col-span-2 space-y-4">
       <div class="space-y-2">
-          <h2 class="text-2xl font-bold text-gray-800">{{ $product->title }}</h2>
+          <h2 class="md:text-2xl text-xl font-bold text-gray-800">{{ $product->title }}</h2>
           <p class="text-gray-800 text-base">{{ formatRupiah($product->price) }}</p>
       </div>
       <div class="flex gap-4 justify-start">
