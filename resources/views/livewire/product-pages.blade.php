@@ -37,7 +37,7 @@
                     <p class="font-poppins w-full text-center text-sm text-gray-600">Produk Belum Ada</p>
                 @endforelse
 
-                <div class="text-center w-full py-4" x-intersect.full="$wire.loadMore()">
+                {{-- <div class="text-center w-full py-4" x-intersect.full="$wire.loadMore()">
                     <div wire:loading wire:target="loadMore">
                         <svg class="text-gray-300 animate-spin" viewBox="0 0 64 64" fill="none"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -52,7 +52,7 @@
                             </path>
                         </svg>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
