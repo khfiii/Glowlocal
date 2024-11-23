@@ -61,5 +61,5 @@ Route::get('/auth/google/callback', function () {
 
     Auth::login($user);
     
-    return redirect()->intended('/');
+    return session()->has('url.intended') ? redirect(session('url.intended')) : redirect()->route('home');
 });
