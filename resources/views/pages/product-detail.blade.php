@@ -8,7 +8,7 @@
     @endpush
 
     <div class="flex w-full justify-center">
-        <div class="font-sans max-w-2xl">
+        <div class="font-sans max-w-4xl">
             <nav class="flex md:ms-4 visible md:hidden" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
