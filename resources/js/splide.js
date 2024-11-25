@@ -8,8 +8,7 @@ document.addEventListener("alpine:init", () => {
     if (mainCarousel && thumbnailCarousel) {
         const thumbnailCarousel = new Splide("#thumbnail-carousel", {
             fixedWidth: 100,
-            fixedHeight: 100,
-            gap: 10,
+            fixedHeight: "100%",
             rewind: true,
             pagination: false,
             isNavigation: true,
@@ -17,7 +16,7 @@ document.addEventListener("alpine:init", () => {
         });
 
         const mainCarousel = new Splide("#main-carousel", {
-            type: "fade",
+            type: "splide",
             rewind: true,
             pagination: false,
             arrows: false,
