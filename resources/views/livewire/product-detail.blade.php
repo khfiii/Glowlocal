@@ -60,16 +60,4 @@
               {!! Str::markdown($product->description) !!}
           </div>
       @endif
-
-      {{-- @if ($product->description)
-
-      <div class="mt-8 space-y-1">
-          <h3 class="text-xl font-bold text-gray-800">Deskripsi Produk</h3>
-
-          <div class="text-sm prose prose-sm -space-y-2 text-start">
-              {!! Str::markdown($product->description) !!}
-          </div>
-      </div>
-
-      @endif --}}
   </div>

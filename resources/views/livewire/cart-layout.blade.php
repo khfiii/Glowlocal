@@ -18,24 +18,59 @@
         </div>
     @else
         <div class="font-sans max-w-5xl max-md:max-w-xl mx-auto bg-white py-4">
-            <div class="grid md:grid-cols-3 gap-8 mt-4" x-data="{ items: {{ $cartItems }} }">
+            <div class="grid md:grid-cols-3 gap-8 mt-4" x-data="{
+                items: {{ $cartItems }},
+                formatRupiah(value) {
+                    return new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR',
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    }).format(value);
+                }
+            }">
                 <div class="md:col-span-2 space-y-4">
                     <template x-for="(item, index) in items" :key="item.id">
                         <div x-data="{ quantity: item.quantity }"
                             @change="Livewire.dispatch('updateQuantity', { itemId: item.id, quantity: quantity })"
                             class="grid grid-cols-3 items-start gap-4">
-                            <div class="col-span-2 flex items-start gap-4">
+                            <div class="col-span-3 flex items-start gap-4">
                                 <div class="w-28 h-28 max-sm:w-24 max-sm:h-24 shrink-0 bg-gray-100 p-2 rounded-md">
                                     <img :src='item.product.media[0].original_url' class="w-full h-full object-contain"
                                         loading="lazy" />
                                 </div>
 
-                                <div class="flex flex-col">
-                                    <h3 class="text-base font-bold text-gray-800" x-text="item.product.title"></h3>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-sm md:text-xl font-bold text-gray-800" x-text="item.product.title">
+                                    </h3>
+                                    <div class="flex justify-between">
 
-                                    <p class="text-xs font-semibold text-gray-500 mt-0.5">
-                                        Limited
-                                    </p>
+                                        <h4 x-text="formatRupiah(item.product.price)" class="text-sm text-gray-800">
+                                        </h4>
+
+                                        <div class="text-sm">
+                                            <button
+                                                @click="if(quantity > 1) quantity--; $wire.updateQuantity(item.id, quantity)"
+                                                class="text-gray-800">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 fill-current"
+                                                    viewBox="0 0 124 124">
+                                                    <path
+                                                        d="M112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z"
+                                                        data-original="#000000"></path>
+                                                </svg>
+                                            </button>
+                                            <span x-text="quantity" class="mx-3">1</span>
+                                            <button @click="quantity++; $wire.updateQuantity(item.id, quantity)"
+                                                class="text-gray-800 font-bold">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 fill-current"
+                                                    viewBox="0 0 42 42">
+                                                    <path
+                                                        d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"
+                                                        data-original="#000000"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
 
 
                                     <button type="button" @click="items.splice(index, 1); $wire.removeItem(item)"
@@ -55,30 +90,6 @@
                                         </div>
                                     </button>
                                 </div>
-                            </div>
-
-                            <div class="ml-auto">
-                                <h4 x-text="item.product.price"
-                                    class="text-lg max-sm:text-base font-bold text-gray-800"></h4>
-                                <button @click="if(quantity > 1) quantity--; $wire.updateQuantity(item.id, quantity)"
-                                    class="text-gray-800 font-bold">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 fill-current"
-                                        viewBox="0 0 124 124">
-                                        <path
-                                            d="M112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z"
-                                            data-original="#000000"></path>
-                                    </svg>
-                                </button>
-                                <span x-text="quantity" class="mx-3 font-bold">1</span>
-                                <button @click="quantity++; $wire.updateQuantity(item.id, quantity)"
-                                    class="text-gray-800 font-bold">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 fill-current"
-                                        viewBox="0 0 42 42">
-                                        <path
-                                            d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"
-                                            data-original="#000000"></path>
-                                    </svg>
-                                </button>
                             </div>
                         </div>
                     </template>
@@ -133,8 +144,6 @@
                             <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan <span
                                     class="ml-auto font-bold">{{ formatRupiah($layanan) }}</span>
                             </li>
-                            {{-- <li class="flex flex-wrap gap-4 text-sm">Biaya Layanan 2% <span class="ml-auto font-bold"
-                                x-text="biayaLayanan"></span></li> --}}
                             <hr class="border-gray-300" />
                             <li class="flex flex-wrap gap-4 text-sm font-bold">Total <span
                                     class="ml-auto">{{ formatRupiah($total) }}</span>
