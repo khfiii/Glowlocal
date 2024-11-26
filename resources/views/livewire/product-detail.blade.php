@@ -1,13 +1,6 @@
   <div class="lg:col-span-2 space-y-4">
       <div class="space-y-2">
           <h2 class="md:text-2xl text-xl font-bold text-gray-800">{{ $product->title }}</h2>
-          @if($product->description)
-            
-          <div class="text-sm prose prose-sm -space-y-2 text-start">
-              {!! Str::markdown($product->description) !!}
-          </div>
-            
-          @endif
           <p class="text-gray-800 text-base">{{ formatRupiah($product->price) }}</p>
       </div>
       <div class="flex gap-4 justify-start">
@@ -61,6 +54,12 @@
               </button>
           </div>
       </div>
+
+      @if ($product->description)
+          <div class="text-sm prose prose-sm -space-y-2 text-start">
+              {!! Str::markdown($product->description) !!}
+          </div>
+      @endif
 
       {{-- @if ($product->description)
 
