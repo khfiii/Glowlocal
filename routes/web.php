@@ -22,7 +22,7 @@ use App\Http\Controllers\ShoppingController;
 
 Route::get( '/', [ HomeController::class, 'index' ] )->name( 'home' );
 Route::get( 'produk', [ ProductController::class, 'index' ] )->name( 'product' );
-Route::get( 'product/{product:slug}', [ ProductController::class, 'detail' ] )->name( 'product.detail' );
+Route::get( 'produk/{product:slug}', [ ProductController::class, 'detail' ] )->name( 'product.detail' );
 Route::view( '/tentang', 'pages.contact' )->name( 'contact' );
 Route::get( '/artikel', [ ArticleController::class, 'index' ] )->name( 'artikel' );
 Route::get( '/artikel/{slug}', [ ArticleController::class, 'detail' ] )->name( 'detail.article' );
