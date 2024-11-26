@@ -7,8 +7,8 @@
         <meta property="og:description" content="{{ $product->seo->description }}">
     @endpush
 
-    <div class="flex w-full justify-center">
-        <div class="font-sans max-w-4xl">
+    <div class="flex w-full md:justify-center">
+        <div class="font-sans">
             <nav class="flex md:ms-4 visible md:hidden" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li class="inline-flex items-center">
@@ -48,9 +48,9 @@
             </nav>
 
             <div class="py-4 lg:max-w-7xl max-w-xl max-lg:mx-auto">
-                <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
+                <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-4 md:gap-8">
                     <div x-cloack
-                        class="min-h-[250px] md:min-h-[500px] lg:col-span-3 bg-gray-50 rounded-lg w-full lg:sticky top-0 text-center">
+                        class="min-h-[250px] md:min-h-[500px] lg:col-span-3  md:items-end bg-gray-50 rounded-lg w-full lg:sticky top-0 text-center">
 
                         <div id="main-carousel" class="splide">
                             <div class="splide__track">
@@ -58,14 +58,14 @@
                                     @foreach ($product->getMedia('*') as $media)
                                         <li class="splide__slide">
                                             <img src="{{ $media->getUrl() }}" alt="{{ $product->title }}"
-                                                loading="lazy">
+                                                loading="lazy" class="w-full">
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
 
-                        <section id="thumbnail-carousel" class="splide mt-1"
+                        <section id="thumbnail-carousel" class="splide mt-1 w-max"
                             aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
                             <div class="splide__track">
                                 <ul class="splide__list">
