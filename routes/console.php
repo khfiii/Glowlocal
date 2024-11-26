@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Artisan;
 // Schedule::command( 'queue:work --stop-when-empty' )
 // ->everyMinute();
 
-Schedule::command( 'queue:work --stop-when-empty' )
-->everyMinute()
-->withoutOverlapping();
+// Schedule::command( 'queue:work --stop-when-empty' )
+// ->everyMinute()
+// ->withoutOverlapping();
+
+Schedule::command( 'generate-sitemap' )->daily();
 
