@@ -51,7 +51,6 @@ class ProductResource extends Resource {
             SpatieMediaLibraryFileUpload::make( 'image' )
             ->collection( 'product_images' )
             ->optimize( 'webp' )
-            ->resize( 50 )
             ->multiple()
             ->image()
             ->required(),
