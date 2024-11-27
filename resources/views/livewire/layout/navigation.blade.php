@@ -31,17 +31,12 @@
                             {{ __('Riwayat Belanja') }}
                         </x-nav-link>  
                     @endauth
-                     <livewire:cart-item/>
                     @guest
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')" wire:navigate>
                             {{ __('Masuk') }}
                         </x-nav-link>
                     @endguest
-
-
-
-                  
-
+                     <livewire:cart-item/>
                 </div>
             </div>
 
