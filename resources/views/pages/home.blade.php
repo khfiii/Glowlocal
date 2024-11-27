@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    @section('page-title', 'Gudang Produk Digital Untuk Bantuk Produktivitasmu')
+    @section('page-title', 'Gudang Produk Digital Untuk Bantu Produktivitas dan Pengembangan dirimu')
 
     @push('meta')
         <meta name="description"
