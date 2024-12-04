@@ -40,7 +40,7 @@ class GenerateSitemap extends Command {
             $sitemap->add(
                 Url::create($baseUrl) // Asumsi produk memiliki slug
                         ->setLastModificationDate(now()) // Tanggal modifikasi terakhir
-                        ->setChangeFrequency('weekly') // Frekuensi perubahan (opsional)
+                        ->setChangeFrequency('weekly') // Frekuensi perubahan (opsio[nal)
                         ->setPriority(0.8) // Prioritas URL (opsional)
             );
            

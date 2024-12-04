@@ -14,7 +14,7 @@
             , "@type": "WebSite"
             , "name": "Glowlocal Shop"
             , "alternateName": "Glowlocal"
-            , "url": "https://glowlocal.shop/"
+            , "url": "https://glowlocal.shop"
             , "potentialAction": {
                 "@type": "SearchAction"
                 , "target": {
