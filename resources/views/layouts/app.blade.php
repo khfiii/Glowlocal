@@ -47,8 +47,8 @@
     {{-- <meta name="description" content="@yield('meta_description','Temukan pilihan produk fisik maupun digital berkualitas tinggi dengan harga terjangkau. Kami hadir untuk memenuhi kebutuhanmu akan produk terbaik!')">
     <meta name="keywords" content="@yield('meta_keywords','produk premium')"> --}}
 
-    <link rel="canonical" href="{{ url()->current() }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ url()->full() }}" />
+    <meta property="og:url" content="{{ url()->full() }}" />
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
