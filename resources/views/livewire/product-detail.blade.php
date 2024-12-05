@@ -33,9 +33,6 @@
                       </svg>
                       <span class="sr-only">Loading...</span>
                   </div>
-
-
-              </button>
               </button>
               <button type="button"
                   class="p-2 bg-gray-200 text-xs text-gray-800 rounded-md flex items-center col-span-5">
@@ -55,7 +52,7 @@
           </div>
       </div>
 
-      @if ($product->description)
+      @if ($product->description)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
           <div class="text-sm prose prose-sm -space-y-2 text-start">
               {!! Str::markdown($product->description) !!}
           </div>
