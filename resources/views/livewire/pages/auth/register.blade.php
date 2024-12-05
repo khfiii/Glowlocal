@@ -46,7 +46,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
         <a href="{{ route('google-login') }}" class="px-4 py-2 border text-sm flex justify-center gap-2 rounded w-full">
             <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy" alt="google logo">
-            <span>Continue with Google</span>
+            <span>Lanjutkan Dengan Google</span>
         </a>
     </div>
 
@@ -92,12 +92,12 @@ new #[Layout('layouts.guest')] class extends Component {
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 href="{{ route('login') }}" wire:navigate>
-                {{ __('Already registered?') }}
+                {{ __('Sudah Daftar?') }}
             </a>
 
             <x-primary-button class="ms-4 w-[6rem] flex justify-center">
                <div class="w-full" wire:loading.remove>
-                {{ __('Register') }}
+                {{ __('Daftar') }}
                </div>
                 <div role="status" wire:loading wire.target="register" class="w-full">
                     <svg aria-hidden="true" class="inline w-4 h-4 text-gray-200 animate-spin fill-blue-600"

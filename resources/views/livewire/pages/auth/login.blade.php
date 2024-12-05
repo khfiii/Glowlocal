@@ -30,7 +30,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
         <a href="{{ route('google-login') }}" class="px-4 py-3 border text-sm flex justify-center gap-2 rounded w-full">
             <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy" alt="google logo">
-            <span>Continue With Google</span>
+            <span>Lanjutkan Dengan Google</span>
         </a>
     </div>
     <!-- Session Status -->
@@ -49,7 +49,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             href="{{ route('password.request') }}" wire:navigate>
-                            {{ __('Forgot your password?') }}
+                            {{ __('Lupa password?') }}
                         </a>
                     @endif
 
@@ -71,19 +71,19 @@ new #[Layout('layouts.guest')] class extends Component {
                 <label for="remember" class="inline-flex items-center">
                     <input wire:model="form.remember" id="remember" type="checkbox"
                         class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Ingat Saya') }}</span>
                 </label>
 
                 <div class="flex items-center justify-end mt-4">
-                    <a href="{{ route('register') }}" class="text-sm text-gray-600 text-center">Don't have an account?
-                        Register </a>
+                    <a href="{{ route('register') }}" class="text-sm text-gray-600 text-center">Belum punya akun?
+                        Daftar </a>
 
 
 
                     <x-primary-button class="ms-3 w-[6rem] flex justify-center">
 
                         <div class="w-full" wire:loading.remove>
-                            {{ __('Log in') }}
+                            {{ __('Masuk') }}
                         </div>
 
                         <div role="status" wire:loading wire.target="login" class="w-full">
