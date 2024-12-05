@@ -17,26 +17,36 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @forelse($this->products as $product)
-                    <a href="{{ route('product.detail', ['product' => $product]) }}">
+                    <div>
                         <div class="w-full border rounded-sm p-4 h-full hover:scale-[105%] transition-transform">
                             <div class="h-full w-full flex flex-col items-start gap-4 justify-center relative">
-                                <div class="w-full">
-                                    <img src="{{ $product->getFirstMediaUrl('product_images') }}"
-                                        alt="{{ $product->title }}" loading="lazy">
-                                </div>
-                                {{-- <div class="space-y-4 block w-full">
-                                    <h1 class="text-sm font-bold text-gray-800">{{ $product->title }}</h1>
 
-                                    <div class="flex justify-between w-fulll text-sm">
-                                        <small
-                                            class="text-gray-700 text-base">{{ formatRupiah($product->price) }}</small>
+                                <a href="{{ route('product.detail', ['product' => $product]) }}">
+                                    <div class="w-full">
+                                        <img src="{{ $product->getFirstMediaUrl('product_images') }}"
+                                            alt="{{ $product->title }}" loading="lazy">
                                     </div>
+                                    <div class="space-y-4 block w-full mt-2">
+                                        <h1 class="text-base sm:text-sm font-bold text-gray-800">{{ $product->title }}
+                                        </h1>
+                                    </div>
+                                </a>
 
-                                </div> --}}
+
+                                <div class="flex justify-between w-full items-center">
+                                    <p class="text-base">{{ formatRupiah($product->price) }}</p>
+
+                                    <button wire:click="addToChart({{ $product }})" class="flex">
+                                        <x-heroicon-o-shopping-bag wire:loading.remove
+                                            wire:target="addToChart({{ $product }})"
+                                            class="w-6 sm:w-5 text-gray-700 aspect-square" />
+                                        <small wire:loading wire:target="addToChart({{ $product }})">Tunggu..</small>
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
-                    </a>
+                    </div>
                 @empty
                     <p class="font-poppins w-full text-center text-sm text-gray-600">Produk Belum Ada</p>
                 @endforelse

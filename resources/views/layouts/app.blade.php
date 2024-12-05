@@ -52,6 +52,10 @@
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>

@@ -24,7 +24,7 @@ class ProductDetail extends Component {
 
         if ( !Auth::check() ) {
             Session::put( 'url.intended', $this->defaultUrl );
-            return redirect()->route( 'login' );
+            return $this->dispatch( 'login', client_id:config( 'services.google.client_id' ) );
         }
 
         $user = auth()->user();
