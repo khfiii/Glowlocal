@@ -55,7 +55,7 @@
 
             <div id="g_id_onload"
                 data-client_id="{{ config('services.google.client_id') }}"
-                data-context="signin" data-ux_mode="popup" data-login_uri="glowlocal.shop/auth/google/callback" data-auto_select="true"
+                data-context="signin" data-ux_mode="popup" data-login_uri="https://glowlocal.shop/auth/google/callback" data-auto_select="true"
                 data-itp_support="false">
             </div>
 
