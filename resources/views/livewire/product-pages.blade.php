@@ -24,15 +24,15 @@
                                     <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                         alt="{{ $product->title }}" loading="lazy">
                                 </div>
-                                <div class="space-y-4 block w-full">
+                                {{-- <div class="space-y-4 block w-full">
                                     <h1 class="text-sm font-bold text-gray-800">{{ $product->title }}</h1>
 
-                                    {{-- <div class="flex justify-between w-fulll text-sm">
+                                    <div class="flex justify-between w-fulll text-sm">
                                         <small
                                             class="text-gray-700 text-base">{{ formatRupiah($product->price) }}</small>
-                                    </div> --}}
+                                    </div>
 
-                                </div>
+                                </div> --}}
                             </div>
 
                         </div>
