@@ -51,18 +51,6 @@
                     <p class="font-poppins w-full text-center text-sm text-gray-600">Produk Belum Ada</p>
                 @endforelse
             </div>
-
-
-            <div id="g_id_onload"
-                data-client_id="{{ config('services.google.client_id') }}"
-                data-context="signin" data-ux_mode="popup" data-login_uri="https://glowlocal.shop/auth/google/callback" data-auto_select="true"
-                data-itp_support="false">
-            </div>
-
-            <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_black"
-                data-text="signin_with" data-size="large" data-logo_alignment="left">
-            </div>
-
         </div>
     </div>
 </div>
