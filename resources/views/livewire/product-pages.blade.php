@@ -33,7 +33,7 @@
                                 </a>
 
 
-                                <div class="flex justify-between w-full items-center">
+                                {{-- <div class="flex justify-between w-full items-center">
                                     <p class="text-base">{{ formatRupiah($product->price) }}</p>
 
                                     <button wire:click="addToChart({{ $product }})" class="flex">
@@ -42,7 +42,7 @@
                                             class="w-6 sm:w-5 text-gray-700 aspect-square" />
                                         <small wire:loading wire:target="addToChart({{ $product }})">Tunggu..</small>
                                     </button>
-                                </div>
+                                </div> --}}
                             </div>
 
                         </div>
