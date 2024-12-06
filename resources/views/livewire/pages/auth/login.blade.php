@@ -27,7 +27,7 @@ new #[Layout('layouts.guest')] class extends Component {
 @section('page-title', 'Login')
 
 <div>
-    <div class="w-full mb-4 flex justify-center">
+    <div class="w-full mb-4 flex justify-center flex-col">
 
 
         {{-- <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="popup"
@@ -37,9 +37,19 @@ new #[Layout('layouts.guest')] class extends Component {
         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
             data-text="continue_with" data-size="large" data-logo_alignment="left">
         </div> --}}
+            
 
-        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="redirect" data-login_uri="auth/google/callback"
-            data-itp_support="true">
+        @browser('isInApp')
+        <div class="text-center text-red-500 flex justify-center flex-col items-center border p-2">
+            <div class="w-[10rem]">
+             <img src="{{ asset('secure.png') }}" alt="">
+            </div>
+            Demi Keamanan, Login tidak bisa dilakukan disini mohon gunakan default browser kamu atau klik open in browser di titik tiga samping kanan.
+        </div>
+        @endbrowser
+
+        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin"
+            data-ux_mode="redirect" data-login_uri="auth/google/callback" data-itp_support="true">
         </div>
 
         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
