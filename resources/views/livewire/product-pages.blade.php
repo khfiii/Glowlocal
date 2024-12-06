@@ -22,7 +22,7 @@
                             <div class="h-full w-full flex flex-col items-start gap-4 justify-center relative">
 
                                 <a href="{{ route('product.detail', ['product' => $product]) }}">
-                                    <div class="w-full p-[2rem] md:p-0">
+                                    <div class="w-full p-[1rem] md:p-0">
                                         <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                             alt="{{ $product->title }}" loading="lazy">
                                     </div>
