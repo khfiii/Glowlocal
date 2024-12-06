@@ -27,7 +27,7 @@
                                             alt="{{ $product->title }}" loading="lazy">
                                     </div>
                                     <div class="space-y-4 block w-full mt-2">
-                                        <h1 class="text-base sm:text-sm ps-4 text-gray-800">{{ formatRupiah($product->price) }}
+                                        <h1 class="text-base sm:text-sm ps-4 md:ps-0 text-gray-800">{{ formatRupiah($product->price) }}
                                         </h1>
                                     </div>
                                 </a>
