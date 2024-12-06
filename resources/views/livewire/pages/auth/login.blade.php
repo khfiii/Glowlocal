@@ -3,6 +3,7 @@
 use App\Livewire\Forms\LoginForm;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
+use Masmerise\Toaster\Toaster;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.guest')] class extends Component {
@@ -13,6 +14,8 @@ new #[Layout('layouts.guest')] class extends Component {
      */
     public function login(): void
     {
+     
+
         $this->validate();
 
         $this->form->authenticate();
@@ -33,7 +36,7 @@ new #[Layout('layouts.guest')] class extends Component {
             <span>Lanjutkan Dengan Google</span>
         </a>
     </div>
-    <!-- Session Status -->
+    {{-- <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form wire:submit="login">
@@ -103,5 +106,5 @@ new #[Layout('layouts.guest')] class extends Component {
             </div>
 
         </div>
-    </form>
+    </form> --}}
 </div>
