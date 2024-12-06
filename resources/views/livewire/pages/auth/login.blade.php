@@ -37,31 +37,33 @@ new #[Layout('layouts.guest')] class extends Component {
         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
             data-text="continue_with" data-size="large" data-logo_alignment="left">
         </div> --}}
-            
+
 
         @browser('isInApp')
-        <div class="text-center text-red-500 flex justify-center flex-col items-center border p-2">
-            <div class="w-[10rem]">
-             <img src="{{ asset('secure.png') }}" alt="">
+            <div class="text-center text-red-500 flex justify-center flex-col items-center border p-2 mb-2">
+                <div class="w-[10rem]">
+                    <img src="{{ asset('secure.png') }}" alt="">
+                </div>
+                Demi Keamanan, Login tidak bisa dilakukan disini mohon gunakan default browser kamu atau klik open in
+                browser di titik tiga samping kanan.
             </div>
-            Demi Keamanan, Login tidak bisa dilakukan disini mohon gunakan default browser kamu atau klik open in browser di titik tiga samping kanan.
-        </div>
         @endbrowser
 
-        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin"
-            data-ux_mode="redirect" data-login_uri="auth/google/callback" data-itp_support="true">
+        <div wire:loading class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white z-50">
+            <p>Tunggu sebentar ya...</p>
         </div>
 
-        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
-            data-text="signin_with" data-size="large" data-logo_alignment="left">
+        <div class="w-full flex justify-center" id="content">
+            <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin"
+                data-ux_mode="redirect" data-login_uri="auth/google/callback" data-itp_support="true">
+            </div>
+
+            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
+                data-text="signin_with" data-size="large" data-logo_alignment="left">
+            </div>
         </div>
-
-
-        {{-- <a href="{{ route('google-login') }}" class="px-4 py-3 border text-sm flex justify-center gap-2 rounded w-full">
-            <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy" alt="google logo">
-            <span>Lanjutkan Dengan Google</span>
-        </a> --}}
     </div>
+
 
 
     {{-- <!-- Session Status -->
