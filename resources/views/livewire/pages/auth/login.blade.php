@@ -30,12 +30,20 @@ new #[Layout('layouts.guest')] class extends Component {
     <div class="w-full mb-4 flex justify-center">
 
 
-        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="popup"
-            data-login_uri="https://glowlocal.shop/auth/google/callback" data-itp_support="true">
+        {{-- <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="popup"
+            data-login_uri="auth/google/callback" data-itp_support="true">
         </div>
 
         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
             data-text="continue_with" data-size="large" data-logo_alignment="left">
+        </div> --}}
+
+        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="redirect" data-login_uri="auth/google/callback"
+            data-itp_support="true">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
+            data-text="signin_with" data-size="large" data-logo_alignment="left">
         </div>
 
 

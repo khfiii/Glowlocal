@@ -16,6 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'payment' => PaymentProccessing::class
         ]);
+
+        $middleware->validateCsrfTokens(except: [
+            '/auth/google/callback' // <-- exclude this route
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
