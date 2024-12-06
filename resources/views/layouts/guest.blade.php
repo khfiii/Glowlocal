@@ -8,6 +8,9 @@
 
     <title> @yield('page-title') - {{ config('app.name', 'Laravel') }}</title>
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
     <meta name="robots" content="noindex, follow">
 
 

@@ -14,8 +14,6 @@ new #[Layout('layouts.guest')] class extends Component {
      */
     public function login(): void
     {
-     
-
         $this->validate();
 
         $this->form->authenticate();
@@ -29,13 +27,25 @@ new #[Layout('layouts.guest')] class extends Component {
 @section('page-title', 'Login')
 
 <div>
-    <div class="w-full mb-4">
+    <div class="w-full mb-4 flex justify-center">
 
-        <a href="{{ route('google-login') }}" class="px-4 py-3 border text-sm flex justify-center gap-2 rounded w-full">
+
+        <div id="g_id_onload" data-client_id="{{ config('services.google.client_id') }}" data-context="signin" data-ux_mode="popup"
+            data-login_uri="https://glowlocal.shop/auth/google/callback" data-itp_support="true">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
+            data-text="continue_with" data-size="large" data-logo_alignment="left">
+        </div>
+
+
+        {{-- <a href="{{ route('google-login') }}" class="px-4 py-3 border text-sm flex justify-center gap-2 rounded w-full">
             <img class="w-5 h-5" src="{{ asset('google.svg') }}" loading="lazy" alt="google logo">
             <span>Lanjutkan Dengan Google</span>
-        </a>
+        </a> --}}
     </div>
+
+
     {{-- <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
