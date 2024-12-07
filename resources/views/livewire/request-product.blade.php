@@ -13,7 +13,7 @@
 
 
      <div x-show="active"
-         class="fixed bottom-[calc(4rem+1.5rem)] right-0 bg-white p-6 rounded-lg border border-[#e5e7eb] md:w-[30rem] w-[90%]"
+         class="fixed bottom-[calc(4rem+1.5rem)] right-3  bg-white p-6 rounded-lg border border-gray-900 md:w-[30rem] w-[90%]"
          x-transition @click.outside="active = false" x-cloak>
 
          <!-- Heading -->
@@ -31,7 +31,7 @@
              <form class="flex items-center justify-center w-full space-x-2" wire:submit="send">
 
                  <input
-                     class="flex h-10 w-full rounded-md border border-[#e5e7eb] px-3 py-2 text-sm placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#9ca3af] disabled:cursor-not-allowed disabled:opacity-50 text-[#030712] focus-visible:ring-offset-2"
+                     class="flex h-10 w-full rounded-md border border-[#e5e7eb] px-3 py-2 text-sm placeholder-[#6b7280] focus:outline-none  disabled:cursor-not-allowed disabled:opacity-50 text-[#030712]"
                      placeholder="Ketikan judul produk digitalmu" wire:model="message">
 
 
