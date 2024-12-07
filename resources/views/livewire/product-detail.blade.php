@@ -54,7 +54,7 @@
 
       @if ($product->description)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
           <div class="text-sm prose prose-sm -space-y-2 text-start">
-          <h2>Deksripsi</h1>
+          <h2>Deskripsi Produk</h1>
               {!! Str::markdown($product->description) !!}
           </div>
       @endif
