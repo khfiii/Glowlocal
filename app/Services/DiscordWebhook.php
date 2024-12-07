@@ -38,6 +38,8 @@ class DiscordWebhook {
                 throw new \Exception( 'Gagal mengirim pesan ke Discord. Status: ' . $response->status() );
             }
 
+            return $response;
+
         } catch ( RequestException $e ) {
             // Menangani kesalahan dari HTTP Client ( timeout, dll )
             \Log::error( 'Timeout atau kesalahan lain saat mengirim ke Discord: ' . $e->getMessage() );
