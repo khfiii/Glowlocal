@@ -4,6 +4,7 @@
     @push('meta')
         <meta name="description" content="Jelajahi produk premium berkualitas tinggi dari glowlocal shop">
         <meta property="og:title" content="Jelajahi Produk Premium Glowlocal">
+        <meta name="keywords" content="glowlocal, produk digital, ebook indonesia">
         <meta property="og:description" content="Jelajahi produk premium berkualitas tinggi dari glowlocal shop">
     @endpush
 
