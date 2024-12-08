@@ -26,6 +26,9 @@ class AdminPanelProvider extends PanelProvider {
         ->path( 'admin' )
         ->login()
         ->darkMode( false )
+        ->plugins( [
+            \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make()
+        ] )
         ->colors( [
             'primary' => Color::Purple,
         ] )
@@ -35,9 +38,7 @@ class AdminPanelProvider extends PanelProvider {
             Pages\Dashboard::class,
         ] )
         ->discoverWidgets( in: app_path( 'Filament/Widgets' ), for: 'App\\Filament\\Widgets' )
-        ->widgets( [
-            
-        ] )
+        ->widgets( [] )
         ->middleware( [
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
