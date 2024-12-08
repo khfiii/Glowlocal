@@ -54,6 +54,19 @@
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <meta name="p:domain_verify" content="8df7ddde4a116bda6db0d760c4b8284e"/>
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B9VKV3S0E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-1B9VKV3S0E');
+    </script>
+
 
 
     <!-- Scripts -->
@@ -64,7 +77,7 @@
         }
     </style>
 
-    <x-toaster-hub /> <!-- 👈 -->
+    <x-toaster-hub /> <!-- ðŸ‘ˆ -->
 </head>
 
 
