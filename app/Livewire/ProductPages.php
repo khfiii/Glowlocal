@@ -18,9 +18,10 @@ class ProductPages extends Component {
 
     public int $onPage = 10;
 
-    public $defaultUrl;
+    #[ Url ]
+    public ?string $search = '';
 
-    public $categoryId = null;
+    public $defaultUrl;
 
     public function mount() {
         $this->defaultUrl = url()->current() ?? route( 'home' );
@@ -30,14 +31,16 @@ class ProductPages extends Component {
     #[ Computed ]
 
     public function products(): Collection {
-        if ( is_null( $this->categoryId ) || $this->categoryId == '' ) {
-            // return Product::with( 'category', 'media' )->latest()->take( $this->onPage )->get();
+        if ( is_null( $this->search ) && $this->search == '' ) {
             return Product::with( 'category', 'media' )->latest()->get();
         } else {
-            // return Product::where( 'category_id', $this->categoryId )->with( 'category', 'media' )->latest()->take( $this->onPage )->get();
-            return Product::where( 'category_id', $this->categoryId )->with( 'category', 'media' )->latest()->get();
+            return Product::where( 'title', 'like', '%' . $this->search . '%' )
+            ->with( 'category', 'media' )
+            ->latest()
+            ->get();
 
         }
+
     }
 
     public function loadMore(): void {
