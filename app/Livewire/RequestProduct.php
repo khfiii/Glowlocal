@@ -19,6 +19,8 @@ class RequestProduct extends Component {
     public function send( DiscordWebhook $discord ) {
         $this->validate( [
             'message' => 'required'
+        ], [
+            'required' => 'Input Wajib Di isi 🙂‍'
         ] );
 
         try {

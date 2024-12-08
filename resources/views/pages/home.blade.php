@@ -15,15 +15,15 @@
     <section class="text-gray-600 body-font pt-8 -mt-10 space-y-4">
         <div class="grid grid-cols-1 w-full md:px-[15rem]">
             <div class="">
-                <img src="{{ asset('estetik.webp') }}" alt="Aesthetic Digital Printing Design" class="">
+                <img src="{{ asset('estetik3.webp') }}" alt="Aesthetic Digital Printing Design" class="">
             </div>
         </div>
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">Produk Digital & Ebook Terjemahan Indonesia</span>
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">Baca Ebooks dari google play books dibawah Rp.5000</span>
                 </h1>
                 <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
-                    Jelajahi Beragam Koleksi Template Desain Kreatif, Ebook Keren, dan Produk Digital Premium
+                    Jelajahi Beragam Koleksi Ebook Keren, dan Produk Digital 
                     lainnya
                     Khusus Untukmu ✨
                 </p>

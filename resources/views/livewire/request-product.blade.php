@@ -18,8 +18,8 @@
 
          <!-- Heading -->
          <div class="flex flex-col space-y-1.5 pb-6">
-             <h2 class="font-semibold text-lg tracking-tight">Request Produk Digital </h2>
-             <p class="text-sm text-[#6b7280] leading-3">Produk akan otomatis tersedia dalam 1 x 24 Jam</p>
+             <h2 class="font-semibold text-lg tracking-tight">Request Ebook? </h2>
+             <p class="text-sm text-[#6b7280] leading-3">Masukin link ebook dari google play books 👇</p>
          </div>
 
          <!-- Chat Container -->
@@ -32,7 +32,7 @@
 
                  <input
                      class="flex h-10 w-full rounded-md border border-[#e5e7eb] px-3 py-2 text-sm placeholder-[#6b7280] focus:outline-none  disabled:cursor-not-allowed disabled:opacity-50 text-[#030712]"
-                     placeholder="Masukan Judul atau link dari google play books" wire:model="message">
+                     placeholder="Link Here" wire:model="message">
 
 
                  <button
