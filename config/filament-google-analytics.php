@@ -16,7 +16,7 @@ return [
         'global' => true,
     ],
     'visitors' => [
-        'filament_dashboard' => true,
+        'filament_dashboard' => false,
         'global' => true,
     ],
 
