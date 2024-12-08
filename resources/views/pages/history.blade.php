@@ -51,7 +51,7 @@
                                         @if ($order->status == 'settlement')
                                             <a href="{{ $item->product->product_url }}" class="flex gap-1 items-center">
                                                 <x-hugeicons-file-download class="w-5 h-5 text-gray-700" />
-                                                <small class="text-gray-700">Download</small>
+                                                <small class="text-gray-700">Baca</small>
                                             </a>
                                         @endif
 
