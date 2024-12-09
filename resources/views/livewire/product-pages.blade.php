@@ -40,8 +40,6 @@
                                         </h1>
                                     </div> --}}
                                 </a>
-
-
                                 {{-- <div class="flex justify-between w-full items-center">
                                     <p class="text-base">{{ formatRupiah($product->price) }}</p>
 
@@ -57,10 +55,10 @@
                         </div>
                     </div>
                 @empty
-                    <p wire:loading.remove class="font-poppins w-full text-center text-sm text-gray-600">Produk ada, silahkan request produk dibawah</p>
+                    <p wire:loading.remove class="font-poppins w-full text-center text-sm text-gray-600">Produk belum ada, silahkan request produk pada icon pesan dibawah</p>
                 @endforelse
 
-                <div class="col-span-full" wire:loading>
+                <div class="col-span-full flex justify-start" wire:loading>
                     <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
                         <div class="animate-pulse flex space-x-4">
                             <div class="flex-1 space-y-6 py-1">
