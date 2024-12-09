@@ -76,6 +76,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-span-full">
+                    {{ $this->products->links() }}
+                </div>
             </div>
 
         </div>

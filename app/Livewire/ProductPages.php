@@ -30,15 +30,18 @@ class ProductPages extends Component {
 
     #[ Computed ]
 
-    public function products(): Collection {
-        if ( is_null( $this->search ) && $this->search == '' ) {
-            return Product::with( 'category', 'media' )->latest()->get();
+    public function products() {
+        if ( is_null( $this->search ) || $this->search == '' ) {
+            return Product::with( 'category', 'media' )
+            ->latest()
+            ->paginate( 10 );
+            // Paginate 10 records per page
         } else {
             return Product::where( 'title', 'like', '%' . $this->search . '%' )
             ->with( 'category', 'media' )
             ->latest()
-            ->get();
-
+            ->paginate( 10 );
+            // Paginate 10 records per page
         }
 
     }
