@@ -13,7 +13,7 @@
 
 
      <div x-show="active"
-         class="fixed bottom-[calc(4rem+1.5rem)] right-3  bg-white p-6 rounded-lg border border-gray-900 md:w-[30rem] w-[90%]"
+         class="fixed bottom-[calc(4rem+2rem)] right-3  bg-white p-6 rounded-lg border border-gray-900 md:w-[30rem] w-[90%]"
          x-transition @click.outside="active = false" x-cloak>
 
          <!-- Heading -->
