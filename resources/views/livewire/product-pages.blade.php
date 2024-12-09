@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 @empty
-                    <p wire:loading.remove class="font-poppins w-full text-center text-sm text-gray-600">Produk belum ada, silahkan request produk pada icon pesan dibawah</p>
+                    <p wire:loading.remove class="font-poppins w-full text-center text-sm text-gray-600">Produk belum ada, silahkan request pada icon pesan dibawah</p>
                 @endforelse
 
                 <div class="col-span-full flex justify-start" wire:loading>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-full">
+                <div class="col-span-full" wire:loading.remove>
                     {{ $this->products->links() }}
                 </div>
             </div>
