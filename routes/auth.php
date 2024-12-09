@@ -5,7 +5,10 @@ use Livewire\Volt\Volt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 use Barryvdh\Debugbar\Twig\Extension\Debug;
 use App\Http\Controllers\Auth\VerifyEmailController;
 
@@ -72,8 +75,6 @@ Route::post('/auth/google/callback', function (Request $request) {
 
         $googleData = $response->json();
 
-        Log::info(['data' => $googleData]);
-
         // Simpan atau perbarui pengguna
         $user = User::updateOrCreate(
             ['email' => $googleData['email']], // Pencarian berdasarkan email
@@ -85,7 +86,20 @@ Route::post('/auth/google/callback', function (Request $request) {
 
         Auth::login($user);
 
-        return session()->has('url.intended') ? redirect(session('url.intended')) : redirect()->route('product');
+        $url = Cache::get('product_url', route('product'));
+
+        if(cache()->has('product_id')){
+            $user->carts()->updateOrCreate(
+                // Kondisi pencocokan
+                [ 'product_id' => Cache::get('product_id') ],
+                // Data yang akan diupdate atau dibuat
+                [ 'quantity' => DB::raw( 'quantity + 1' ) ]
+            );
+        }
+
+
+
+        return redirect()->intended($url);
     
     } catch (\Exception $e) {
         return response()->json(['success' => false, 'error' => $e->getMessage()]);

@@ -8,6 +8,8 @@ use Masmerise\Toaster\Toaster;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 class ProductDetail extends Component {
@@ -16,15 +18,15 @@ class ProductDetail extends Component {
     public $defaultUrl;
 
     public function mount() {
-        $this->defaultUrl = url()->current() ?? route( 'home' );
+        $this->defaultUrl = url()->full() ?? route( 'home' );
 
     }
 
     public function addToChart( Product $product ) {
 
         if ( !Auth::check() ) {
-            Session::put( 'url.intended', $this->defaultUrl );
-            // return $this->dispatch( 'login', client_id:config( 'services.google.client_id' ) );
+            Cache::put( 'product_url', $this->defaultUrl, 120 );
+            Cache::put( 'product_id', $product->id, 120 );
             return redirect()->route( 'login' );
         }
 
