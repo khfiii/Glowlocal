@@ -20,7 +20,7 @@
         </div>
         <div class="container flex justify-center">
             <div class="text-start md:text-center md:max-w-3xl">
-                <h1 class="title-font sm:text-4xl text-xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">Gramedia Digital Ada Ditangamu, Baca Dimana dan Kapan Aja</span>
+                <h1 class="title-font sm:text-4xl text-xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">Gramedia Digital Ditangamu, Baca Dimana dan Kapan Aja</span>
                 </h1>
                 <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
                     Jelajahi Beragam Koleksi Ebook Keren, dan Produk Digital 
