@@ -97,9 +97,11 @@ Route::post('/auth/google/callback', function (Request $request) {
             );
         }
 
+        $cartUrl = route('cart');
 
 
-        return redirect()->intended($url);
+
+        return redirect()->intended($cartUrl);
     
     } catch (\Exception $e) {
         return response()->json(['success' => false, 'error' => $e->getMessage()]);
