@@ -28,7 +28,9 @@
                     Khusus Untukmu ✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
-                    <a href="{{ route('product') }}" class="relative inline-block px-4 py-2 font-medium group">
+
+                    @if(\Browser::isInApp())
+                        <a href="#" class="relative inline-block px-4 py-2 font-medium group" id="openInBrowserButton">
                         <span
                             class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                         <span
@@ -37,6 +39,18 @@
                             <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
                         </div>
                     </a>
+                    @else
+                    <a href="{{ route('product') }}" class="relative inline-block px-4 py-2 font-medium group">
+                        <span
+                            class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span
+                            class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <div class="w-full relative text-center">
+                            <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
+                        </div>
+                    </a>     
+                    @endif
+
                 </div>
             </div>
         </div>

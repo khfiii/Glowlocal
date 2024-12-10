@@ -5,5 +5,6 @@ import "./splide";
 import "../../vendor/masmerise/livewire-toaster/resources/js";
 import "./payment";
 import "./google";
+import "./browser";
 
 Alpine.plugin(intersect);
