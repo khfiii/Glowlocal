@@ -5,6 +5,10 @@
         <meta name="description" content="{{ $product->seo->description }}">
         <meta property="og:title" content="{{ $product->seo->title }}">
         <meta property="og:description" content="{{ $product->seo->description }}">
+        <meta name="keywords" content="ebook indonesia">
+        <meta property="og:image" content="{{ $product->getFirstMediaUrl('product_images') }}" />
+        <meta property="og:url" content="{{ url()->full() }}" />
+        <meta property="og:type" content="website" />
     @endpush
 
     <div class="flex w-full md:justify-center">
