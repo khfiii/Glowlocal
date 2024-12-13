@@ -33,7 +33,7 @@
                     Khusus Untukmu ✨
                 </p> --}}
                 <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
-                  Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca.✨
+                  Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca. Make us more attractive✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
 
