@@ -25,12 +25,16 @@
             <div class="text-start md:text-center md:max-w-3xl">
                 <h1
                     class="title-font sm:text-4xl text-xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">
-                    Gramedia Digital Ditangamu, Baca Dimana dan Kapan Aja</span>
+                    Ebook Yang Bikin Kamu Makin Keren & Berwawasan 📚</span>
                 </h1>
-                <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
+                {{-- <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
                     Jelajahi Beragam Koleksi Ebook Keren, dan Produk Digital
                     lainnya
                     Khusus Untukmu ✨
+                </p> --}}
+                <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
+                  Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca.
+                Membaca membuat kita punya wawasan, peka dan yang pasti mengundang cinta yang setara. ✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
 
@@ -42,7 +46,7 @@
                             <span
                                 class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                             <div class="w-full relative text-center">
-                                <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
+                                <span class=" text-black group-hover:text-white font-serif">Let's Go</span>
                             </div>
                         </a>
                     @else
@@ -52,7 +56,7 @@
                             <span
                                 class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                             <div class="w-full relative text-center">
-                                <span class=" text-black group-hover:text-white font-serif">Jelajahi Produk</span>
+                                <span class=" text-black group-hover:text-white font-serif">Let's Go</span>
                             </div>
                         </a>
                     @endif
