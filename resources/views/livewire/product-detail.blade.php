@@ -51,10 +51,15 @@
               </button>
           </div>
       </div>
-
+        @dd($product->category->name)
       @if ($product->description)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
           <div class="text-sm prose prose-sm -space-y-2 text-start">
-          <h2>Deskripsi Produk</h1>
+          @if($product->category->name == 'Ebook')
+            <h2>Sinopsis Ebook</h1>
+          @else
+            <h2>Deskripsi Produk</h1>
+            
+          @endif
               {!! Str::markdown($product->description) !!}
           </div>
       @endif
