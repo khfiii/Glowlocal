@@ -33,8 +33,7 @@
                     Khusus Untukmu ✨
                 </p> --}}
                 <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
-                  Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca.
-                Membaca membuat kita punya wawasan, peka dan yang pasti mengundang cinta yang setara. ✨
+                  Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca.✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
 
