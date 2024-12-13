@@ -51,7 +51,6 @@
               </button>
           </div>
       </div>
-        @dd($product->category->name)
       @if ($product->description)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
           <div class="text-sm prose prose-sm -space-y-2 text-start">
           @if($product->category->name == 'Ebook')
