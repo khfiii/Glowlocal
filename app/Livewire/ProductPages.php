@@ -5,7 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
-use Livewire\Attributes\Url;
+use Livewire\WithPagination;
 use Masmerise\Toaster\Toaster;
 use App\Models\CategoryProduct;
 use Livewire\Attributes\Computed;
@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ProductPages extends Component {
+    use WithPagination;
 
     public int $onPage = 10;
 
-    #[ Url ]
     public ?string $search = '';
 
     public $defaultUrl;
@@ -31,18 +31,13 @@ class ProductPages extends Component {
     #[ Computed ]
 
     public function products() {
-        if ( is_null( $this->search ) || $this->search == '' ) {
-            return Product::with( 'category', 'media' )
-            ->latest()
-            ->paginate( 10 );
-            // Paginate 10 records per page
-        } else {
-            return Product::where( 'title', 'like', '%' . $this->search . '%' )
-            ->with( 'category', 'media' )
-            ->latest()
-            ->paginate( 10 );
-            // Paginate 10 records per page
+        $query = Product::with( 'category', 'media' )->latest();
+
+        if ( !empty( $this->search ) ) {
+            $query->where( 'title', 'like', '%' . $this->search . '%' );
         }
+
+        return $query->paginate( 10 );
 
     }
 
