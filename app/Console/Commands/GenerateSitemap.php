@@ -38,14 +38,14 @@ class GenerateSitemap extends Command {
             $sitemap = Sitemap::create();
 
             $sitemap->add(
-                Url::create($baseUrl) // Asumsi produk memiliki slug
+                Url::create(config('app.url')."/") // Asumsi produk memiliki slug
                         ->setLastModificationDate(now()) // Tanggal modifikasi terakhir
                         ->setChangeFrequency('weekly') // Frekuensi perubahan (opsio[nal)
                         ->setPriority(0.8) // Prioritas URL (opsional)
             );
            
             $sitemap->add(
-                Url::create("{$baseUrl}/produk") // Asumsi produk memiliki slug
+                Url::create("{$baseUrl}/produk/") // Asumsi produk memiliki slug
                         ->setLastModificationDate(now()) // Tanggal modifikasi terakhir
                         ->setChangeFrequency('weekly') // Frekuensi perubahan (opsional)
                         ->setPriority(0.8) // Prioritas URL (opsional)
@@ -54,7 +54,7 @@ class GenerateSitemap extends Command {
              // Ambil semua produk dan tambahkan ke sitemap
              Product::all()->each(function ($product) use ($sitemap, $baseUrl) {
                 $sitemap->add(
-                    Url::create("{$baseUrl}/produk/{$product->slug}") // Asumsi produk memiliki slug
+                    Url::create("{$baseUrl}/produk/{$product->slug}/") // Asumsi produk memiliki slug
                         ->setLastModificationDate($product->updated_at) // Tanggal modifikasi terakhir
                         ->setChangeFrequency('weekly') // Frekuensi perubahan (opsional)
                         ->setPriority(0.8) // Prioritas URL (opsional)
@@ -62,7 +62,7 @@ class GenerateSitemap extends Command {
             });
 
             $sitemap->add(
-                Url::create("{$baseUrl}/artikel") // Asumsi produk memiliki slug
+                Url::create("{$baseUrl}/artikel/") // Asumsi produk memiliki slug
                         ->setLastModificationDate(now()) // Tanggal modifikasi terakhir
                         ->setChangeFrequency('weekly') // Frekuensi perubahan (opsional)
                         ->setPriority(0.8) // Prioritas URL (opsional)
@@ -79,7 +79,7 @@ class GenerateSitemap extends Command {
 
 
             $sitemap->add(
-                Url::create("{$baseUrl}/tentang") // Asumsi produk memiliki slug
+                Url::create("{$baseUrl}/tentang/") // Asumsi produk memiliki slug
                         ->setLastModificationDate(now()) // Tanggal modifikasi terakhir
                         ->setChangeFrequency('weekly') // Frekuensi perubahan (opsional)
                         ->setPriority(0.8) // Prioritas URL (opsional)
