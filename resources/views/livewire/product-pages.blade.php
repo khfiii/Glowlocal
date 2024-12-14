@@ -59,7 +59,7 @@
                         ada, silahkan request pada icon pesan dibawah</p>
                 @endforelse
 
-                @for ($i = 0; $i < 3; $i++)
+                @for ($i = 0; $i <= 10; $i++)
                     <div class="md:col-span-1 col-span-full flex justify-start" wire:loading>
                         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
                             <div class="animate-pulse flex space-x-4">
