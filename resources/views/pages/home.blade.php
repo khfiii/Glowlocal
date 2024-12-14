@@ -22,9 +22,9 @@
             </div>
         </div>
         <div class="container flex justify-center">
-            <div class="text-start md:text-center md:max-w-3xl">
+            <div class="text-start md:max-w-3xl">
                 <h1
-                    class="title-font sm:text-4xl text-xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">
+                    class="title-font sm:text-4xl sm:px-28 text-xl mb-4 font-bold text-gray-900 font-serif text-start md:text-center">
                     Ebook Yang Bikin Kamu Makin Keren & Berwawasan 📚</span>
                 </h1>
                 {{-- <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
@@ -32,7 +32,7 @@
                     lainnya
                     Khusus Untukmu ✨
                 </p> --}}
-                <p class="mb-8 leading-relaxed font-serif text-start md:text-center">
+                <p class="mb-8 leading-relaxed font-serif text-start sm:text-lg sm:px-20 md:text-center">
                   Cara paling sederhana untuk mencapai versi terbaik dari diri kita adalah dengan membaca. Make us more attractive✨
                 </p>
                 <div class="flex flex-col md:flex-row gap-2 md:justify-center">
