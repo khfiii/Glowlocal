@@ -37,7 +37,7 @@ class ProductPages extends Component {
             $query->where( 'title', 'like', '%' . $this->search . '%' );
         }
 
-        return $query->paginate( 10 );
+        return $query->paginate( 12 );
 
     }
 
