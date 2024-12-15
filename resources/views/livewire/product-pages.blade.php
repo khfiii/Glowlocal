@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 @empty
-                    <p wire:loading.remove class="font-poppins w-full text-center text-sm text-gray-600">Produk belum
+                    <p wire:loading.remove class="font-poppins w-full text-start text-sm text-gray-600">Produk belum
                         ada, silahkan request pada icon pesan dibawah</p>
                 @endforelse
 

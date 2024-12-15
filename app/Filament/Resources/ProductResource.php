@@ -69,7 +69,8 @@ class ProductResource extends Resource {
             TextColumn::make( 'price' )
             ->money( 'IDR', locale:'id' ),
             SpatieMediaLibraryImageColumn::make( 'image' )
-            ->collection( 'product_images' )
+            ->collection( 'product_images' ),
+            TextColumn::make( 'created_at' ),
         ] )
         ->filters( [
             //
@@ -89,5 +90,9 @@ class ProductResource extends Resource {
         return [
             'index' => Pages\ManageProducts::route( '/' ),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder {
+        return parent::getEloquentQuery()->latest();
     }
 }
