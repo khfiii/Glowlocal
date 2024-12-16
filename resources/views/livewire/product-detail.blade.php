@@ -1,4 +1,4 @@
-  <div class="lg:col-span-2 space-y-4">
+  <div class="w-full space-y-4">
       <div class="space-y-2">
           <h2 class="md:text-2xl text-xl font-bold text-gray-800">{{ $product->title }}</h2>
           <p class="text-gray-800 text-base">{{ formatRupiah($product->price) }}</p>
@@ -51,15 +51,35 @@
               </button>
           </div>
       </div>
-      @if ($product->description)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-          <div class="text-sm prose prose-sm -space-y-2 text-start">
-          @if($product->category->name == 'Ebook')
-            <h2>Sinopsis Ebook</h1>
-          @else
-            <h2>Deskripsi Produk</h1>
-            
-          @endif
-              {!! Str::markdown($product->description) !!}
+      @if ($product->description)
+          <div x-cloak x-data="{
+              fullText: @js(strip_tags(Str::markdown($product->description))),
+              showMore: false,
+              get visibleText() {
+                  const words = this.fullText.split(' ');
+                  if (this.showMore || words.length <= 100) {
+                      return this.fullText;
+                  }
+                  return words.slice(0, 50).join(' ') + '...';
+              },
+              get isTextTooLong() {
+                  return this.fullText.split(' ').length > 100;
+              }
+          }" class="text-sm prose prose-sm space-y-4 text-start">
+              @if ($product->category->name == 'Ebook')
+                  <h2>Sinopsis Ebook</h2>
+              @else
+                  <h2>Deskripsi Produk</h2>
+              @endif
+
+              <p x-text="visibleText"></p>
+
+              <template x-if="isTextTooLong">
+                  <button @click="showMore = !showMore" class="text-blue-500 hover:underline mt-2">
+                      <span x-show="!showMore">Show More</span>
+                      <span x-show="showMore">Show Less</span>
+                  </button>
+              </template>
           </div>
       @endif
   </div>

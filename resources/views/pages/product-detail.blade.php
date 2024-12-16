@@ -52,7 +52,7 @@
             </nav>
 
             <div class="py-4 lg:max-w-7xl max-w-xl max-lg:mx-auto">
-                <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-4 md:gap-8">
+                <div class="flex flex-col md:flex-row gap-6">
                     {{-- <div x-cloack
                         class="min-h-[250px] md:min-h-[500px] lg:col-span-3  md:items-end bg-gray-50 rounded-lg w-full lg:sticky top-0 text-center">
 
@@ -84,11 +84,13 @@
                         </section>
                     </div> --}}
 
-                    <div class="w-full">
+                    <div class="w-max mx-auto">
                     <img src="{{ $product->getFirstMediaUrl("product_images") }}" alt="">
                     </div>
 
+                    <div class="">
                     <livewire:product-detail :product="$product" />
+                    </div>
                 </div>
             </div>
         </div>
