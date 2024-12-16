@@ -17,7 +17,7 @@
                   </svg>
 
                   <div class="w-[7rem]" wire:loading.remove>
-                      Masukan Keranjang
+                      Dapatkan {{ $product->category->name }}
                   </div>
 
                   <div role="status" wire:loading class="w-[7rem]">
