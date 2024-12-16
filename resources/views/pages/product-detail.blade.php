@@ -84,7 +84,7 @@
                         </section>
                     </div> --}}
 
-                    <div class="w-max mx-auto">
+                    <div class="w-[13rem] mx-auto">
                     <img src="{{ $product->getFirstMediaUrl("product_images") }}" alt="">
                     </div>
 
