@@ -29,27 +29,21 @@
                     <div wire:loading.remove>
                         <div class="w-full border rounded-sm p-4 h-full hover:scale-[105%] transition-transform">
                             <div class="h-full w-full flex flex-col items-start gap-4 justify-center relative">
-
-                                <a href="{{ route('product.detail', ['product' => $product]) }}">
-                                    <div class="w-full p-[10px] md:p-0">
-                                        <img src="{{ $product->getFirstMediaUrl('product_images') }}"
-                                            alt="{{ $product->title }}" loading="lazy">
-                                    </div>
-                                    {{-- <div class="space-y-4 block w-full mt-2">
-                                        <h1 class="text-base sm:text-sm ps-4 md:ps-0 text-gray-800">{{ formatRupiah($product->price) }}
-                                        </h1>
-                                    </div> --}}
-                                </a>
-                                {{-- <div class="flex justify-between w-full items-center">
-                                    <p class="text-base">{{ formatRupiah($product->price) }}</p>
-
-                                    <button wire:click="addToChart({{ $product }})" class="flex">
-                                        <x-heroicon-o-shopping-bag wire:loading.remove
-                                            wire:target="addToChart({{ $product }})"
-                                            class="w-6 sm:w-5 text-gray-700 aspect-square" />
-                                        <small wire:loading wire:target="addToChart({{ $product }})">Tunggu..</small>
-                                    </button>
-                                </div> --}}
+                                @if (\Browser::isInApp())
+                                    <a href="#" id="openInBrowserButton">
+                                        <div class="w-full p-[10px] md:p-0">
+                                            <img src="{{ $product->getFirstMediaUrl('product_images') }}"
+                                                alt="{{ $product->title }}" loading="lazy">
+                                        </div>
+                                    </a>
+                                @else
+                                    <a href="{{ route('product.detail', ['product' => $product]) }}">
+                                        <div class="w-full p-[10px] md:p-0">
+                                            <img src="{{ $product->getFirstMediaUrl('product_images') }}"
+                                                alt="{{ $product->title }}" loading="lazy">
+                                        </div>
+                                    </a>
+                                @endif
                             </div>
 
                         </div>
