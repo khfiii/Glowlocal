@@ -27,6 +27,9 @@
                                         @if ($order->status == 'settlement')
                                             <span
                                                 class="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">Sukses</span>
+                                        @elseif($order->status =='expire')
+                                            <span
+                                                class="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-500">{{ $order->status }}</span>
                                         @else
                                             <span
                                                 class="px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-500">{{ $order->status }}</span>
