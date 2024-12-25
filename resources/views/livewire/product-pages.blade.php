@@ -29,21 +29,12 @@
                     <div wire:loading.remove>
                         <div class="w-full border rounded-sm p-4 h-full hover:scale-[105%] transition-transform">
                             <div class="h-full w-full flex flex-col items-start gap-4 justify-center relative">
-                                @if (\Browser::isInApp())
-                                    <a href="#" id="openInBrowserButton">
+                              <a href="{{ route('product.detail', ['product' => $product]) }}">
                                         <div class="w-full p-[10px] md:p-0">
                                             <img src="{{ $product->getFirstMediaUrl('product_images') }}"
                                                 alt="{{ $product->title }}" loading="lazy">
                                         </div>
-                                    </a>
-                                @else
-                                    <a href="{{ route('product.detail', ['product' => $product]) }}">
-                                        <div class="w-full p-[10px] md:p-0">
-                                            <img src="{{ $product->getFirstMediaUrl('product_images') }}"
-                                                alt="{{ $product->title }}" loading="lazy">
-                                        </div>
-                                    </a>
-                                @endif
+                                </a>
                             </div>
 
                         </div>
